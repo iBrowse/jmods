@@ -16,6 +16,10 @@ arcGIS.arc_map = {--[[
 ]]}
 
 
+
+
+
+--TODO: chop chop
 function arcGIS.arc_gen_default(x, y, z)
 	local c_air = minetest.get_content_id("air")
 	local c_dirt = minetest.get_content_id("default:dirt")
