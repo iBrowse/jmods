@@ -11,13 +11,34 @@ minetest.register_chatcommand("arcgen_here", {
 	end
 })
 
+minetest.register_chatcommand("my_coord", {
+	params = "",
+	description = "",
+	func =
+	function (name, param)
+		core.chat_send_all(
+			core.serialize(
+				arcGIS.get_player_coords(
+					core.get_player_by_name(name)
+		)	)	)
+	end
+})
+
 minetest.register_chatcommand("load_arc", {
 	params = "",
 	description = "",
 	func =
 	function (name, param)
 		minetest.chat_send_all("loading data...")
-		arcGIS.arc_map = arcGIS.loadData(jmod.worldpath)
+		local data, points = arcGIS.loadData(jmod.worldpath)
+		local m = arcGIS.map
+		m.nrows = data.nrows
+		m.ncols = data.ncols
+		m.xcorn = data.xcorn
+		m.ycorn = data.ycorn
+		m.csize = data.csize
+		m.nodata = data.nodata
+		m.points = points
 	end
 	})
 
@@ -26,7 +47,7 @@ minetest.register_chatcommand("arc_data", {
 	description = "",
 	func =
 	function (name, param)
-		tab = core.serialize(arcGIS.arc_map["points"][1][1])
+		tab = core.serialize(arcGIS.map.points[1][1])
 		minetest.chat_send_all("arc_data is "..tab)
 	end
 })
