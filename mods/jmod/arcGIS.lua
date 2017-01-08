@@ -3,18 +3,17 @@ arcGIS = {}
 arcGIS.map = {}
 local map = arcGIS.map
 map.nrows, map.ncols, map.xcorn, map.ycorn, map.csize, map.nodata = 0,0,0,0,0,0
+map.scale = 8
 map.points = {--[[
 	{523,522,520,517,513},
 	{523,523,521,519,516},
 	{525,524,523,521,519},
 	{527,525,522,522,521},
 	{530,528,526,525,524},
-]]
-}
-
+]]}
 map.origin = {
 	latitude = {
-	 	degrees = 45,
+	 	degrees = 42,
 	 	minutes = 30,
 	 	seconds = 0,
 	 },
@@ -24,17 +23,16 @@ map.origin = {
 	 	seconds = 0,
 	},
 }
-
 map.spawn = {
 	latitude = { 
-		degrees = 45,
-		minutes = 32,
-		seconds = 12,
+		degrees = 42,
+		minutes = 11,
+		seconds = 29,
 	},
 	longitude = {
 		degrees = -122,
-		minutes = 40,
-		seconds = 55,
+		minutes = 42,
+		seconds = 3,
 	},
 }
 
@@ -72,32 +70,31 @@ end
 
 --TODO: chop chop
 function arcGIS.arc_gen_default(x, y, z)
+	local scale = arcGIS.scale/2
 	local c_air = minetest.get_content_id("air")
 	local c_dirt = minetest.get_content_id("default:dirt")
 	local start_block = {
-		x = math.floor((x+2)/2),
-		y = math.floor(y/2),
-		z = math.floor((z+2)/2),
+		x = math.floor((x+scale)/scale),
+		y = math.floor((y+scale)/scale),
+		z = math.floor((z+scale)/scale),
 	}
 	local data = map.points
 	
+	minetest.chat_send_all("Generating " .. (r*c) .. " points of terrain...")
 	for r, row in ipairs(data) do
-		minetest.chat_send_all("Row "..r)
 		for c, height in ipairs(row) do
-			--local height = tonumber(data[r][c])
 			local nodataval = map.nodata
 			if height == nodataval then minetest.chat_send_all("nodataval") break end --TODO: interpolator
-			minetest.chat_send_all("Row "..r..", Block "..c.." data is "..height)
-
+			
 			local minp = {
-				x = ((start_block.x+c)*4)-1,
+				x = ((start_block.x+c)*scale)-(scale-1),
 				y = (height/4)-12,
-				z = ((start_block.z+r)*4)-1,
+				z = ((start_block.z+r)*scale)-(scale-1),
 			}
 			local maxp = {
-				x = ((start_block.x+c)*4),
+				x = (start_block.x+c)*scale,
 				y = height/4,
-				z = ((start_block.z+r)*4),
+				z = (start_block.z+r)*scale,
 			}
 
 			local voxar = VoxelArea:new{MinEdge={x=minp.x,y=minp.y,z=minp.z},MaxEdge={x=maxp.x,y=maxp.y,z=maxp.z}}
@@ -112,27 +109,21 @@ end
 
 function arcGIS.loadData(path)
 	local data = {}
+	local points = {}
 	local filepath = path.."/arc_map"
-	minetest.chat_send_all("loading arcGIS from "..filepath)
 	local input = assert(io.input(filepath), "could not load arc_map")
-	
 	local count = 0
-	local map = {}
-
+	minetest.chat_send_all("loading arcGIS from "..filepath)
 	while true do
 		count = count+1
 		minetest.chat_send_all("reading line "..count)
 		local line = io.read() 
-
-		if line == nil then minetest.chat_send_all("no line found!") break end
+		if line == nil then minetest.chat_send_all("line "..count.." not found!") break end
 
 		--# infoStart, infoEnd, infoData
 		local iS, iE, iD = string.find(line, '^(%S+)%s+')
 		if iD then
-			minetest.chat_send_all("found start:"..iS.." and end:"..iE)
-
 			local _,_,num = string.find(line, '%s+(%S+)$')
-			minetest.chat_send_all("gives "..iD.." : "..num)
 
 			if iD == "ncols" then
 				data.ncols = num
@@ -158,17 +149,12 @@ function arcGIS.loadData(path)
 			for v in string.gmatch(line, "%s([-%d]+)") do
 				arr[#arr+1] = v
 			end
-			map[#map+1] = arr
-
-			minetest.chat_send_all("array is "..core.serialize(arr))
+			points[#points+1] = arr
 		end
 	end
-
-	local points = map
-
 	input:close()
-	minetest.chat_send_all("count is "..count)
 
+	minetest.chat_send_all("got data from "..count.." lines!")
 	local output = assert(io.open(jmod.worldpath.."/test_output", "w"), "could not do file thing")
 	output:write(core.serialize(data))
 	output:close()
