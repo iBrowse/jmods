@@ -29,12 +29,22 @@ function arcGIS.set_origin(lat, long)
 end
 
 function arcGIS.set_scale(scale)
-	arcGIS.scale = scale  -- 2 is 1:2 is 16x16 nodes per arc-second
+	arcGIS.map.scale = scale  -- 2 is 1:2 is 16x16 nodes per arc-second
+end
+
+
+function arcGIS.arcgen_track()
+	-- body
+end
+
+function arcGIS.gen_next()
+	-- what has been added to arcGIS.map.gen
+
 end
 
 --TODO: chop chop
 function arcGIS.arc_gen_default(x, y, z)
-	local scale = arcGIS.scale/2
+	local scale = arcGIS.map.scale/2
 	local c_air = minetest.get_content_id("air")
 	local c_dirt = minetest.get_content_id("default:dirt")
 	local start_block = {
@@ -42,31 +52,82 @@ function arcGIS.arc_gen_default(x, y, z)
 		y = math.floor((y+scale)/scale),
 		z = math.floor((z+scale)/scale),
 	}
-	local data = map.points
-	
-	minetest.chat_send_all("Generating " .. (r*c) .. " points of terrain...")
-	for r, row in ipairs(data) do
+	local data = arcGIS.map.data
+	local points = arcGIS.map.points
+	minetest.chat_send_all("Generating "..(data.nrows*data.ncols).." points of terrain...")
+	local nodataval = data.nodata
+	for r, row in ipairs(points) do
 		for c, height in ipairs(row) do
-			local nodataval = map.nodata
-			if height == nodataval then minetest.chat_send_all("nodataval") break end --TODO: interpolator
-			
+			if height == nodataval then minetest.chat_send_all("nodataval") break end 
+			--TODO: it's ok if last value in row == nodataval
+			--other nodatas should be smoothed out/in using surrounding values
 			local minp = {
 				x = ((start_block.x+c)*scale)-(scale-1),
-				y = (height/4)-12,
+				y = (height/2)-7,
 				z = ((start_block.z+r)*scale)-(scale-1),
 			}
 			local maxp = {
 				x = (start_block.x+c)*scale,
-				y = height/4,
+				y = height/2,
 				z = (start_block.z+r)*scale,
 			}
-
 			local voxar = VoxelArea:new{MinEdge={x=minp.x,y=minp.y,z=minp.z},MaxEdge={x=maxp.x,y=maxp.y,z=maxp.z}}
 			local iter = voxar:iterp(minp,maxp)
 			for node in iter do
 				local ipos = voxar:position(node)
 				minetest.set_node(ipos, {name="default:dirt"})
 			end
+		end
+	end
+end
+
+function arcGIS.gen_for_player(player) --ohboy time for a quadtree?
+	local scale = arcGIS.map.scale/2
+	local bpos = player:getpos()
+	for a, k in bpos do
+		bpos[a] = math.floor(k/scale)
+	end
+
+	arcGIS.get_nearest_unloaded(bpos)
+
+end
+
+--[[ points { row=col
+	536=13,
+	537=13,
+	536=14,
+	536=16,
+}]]
+function arcGIS.gen_points(points)--should only be "-values within 3'x3' of player
+	local scale = arcGIS.map.scale/2
+	local c_air = minetest.get_content_id("air")
+	local c_dirt = minetest.get_content_id("default:dirt")
+	
+	local data = arcGIS.map.loaded
+
+	local nodataval = arcGIS.map.data.nodata
+	
+	for r, c in ipairs(points) do
+		arcGIS.
+		if height == nodataval then minetest.chat_send_all("nodataval") break end 
+		--TODO: it's ok if last value in row == nodataval
+		--other nodatas should be smoothed out/in using surrounding values
+		
+		local minp = {
+			x = ((c+(arcGIS.map.data.nrows/2))*scale)-(scale-1),
+			y = (height/2)-7,
+			z = ((r+(arcGIS.map.data.ncols/2))*scale)-(scale-1),
+		}
+		local maxp = {
+			x = ((c+(arcGIS.map.data.nrows/2))*scale,
+			y = height/2,
+			z = ((r+(arcGIS.map.data.ncols/2))*scale,
+		}
+		local voxar = VoxelArea:new{MinEdge={x=minp.x,y=minp.y,z=minp.z},MaxEdge={x=maxp.x,y=maxp.y,z=maxp.z}}
+		local iter = voxar:iterp(minp,maxp)
+		for node in iter do
+			local ipos = voxar:position(node)
+			minetest.set_node(ipos, {name="default:dirt"})
 		end
 	end
 end
@@ -80,9 +141,8 @@ function arcGIS.load_data(path)
 	minetest.chat_send_all("loading arcGIS from "..filepath)
 	while true do
 		count = count+1
-		minetest.chat_send_all("reading line "..count)
 		local line = io.read() 
-		if line == nil then minetest.chat_send_all("line "..count.." not found!") break end
+		if line == nil then break end
 
 		--# infoStart, infoEnd, infoData
 		local iS, iE, iD = string.find(line, '^(%S+)%s+')
@@ -111,7 +171,7 @@ function arcGIS.load_data(path)
 		else
 			local arr = {}
 			for v in string.gmatch(line, "%s([-%d]+)") do
-				arr[#arr+1] = v
+				arr[tostring(#arr+1)] = v
 			end
 			points[#points+1] = arr
 		end
@@ -125,3 +185,12 @@ function arcGIS.load_data(path)
 
 	return data, points
 end
+
+local mapgen_timer = 0
+minetest.register_globalstep(function(dtime)
+	mapgen = mapgen_timer+dtime
+	if mapgen >= 1 then
+		arcGIS.gen_next()
+	end
+end)
+

@@ -1,6 +1,7 @@
 towns.formspecs = {}
-
-towns.formspecs[town_block_placed] =
+local forms = towns.formspecs
+	
+forms.town_block_new =
 	"size[7,7]" ..
 	default.gui_bg ..
 	default.gui_bg_img ..
@@ -8,9 +9,11 @@ towns.formspecs[town_block_placed] =
 	"image[3,2;3,3:towns_town_block.png]"
 	"list[]"
 
-towns.formspecs.town_block_town = 
+forms.town_block_town = 
 	"size[12,9]" ..
 	default.gui_bg ..
 
+--forms.town_block_upgrade = ""
 
-towns.formspecs.town_block_contested = 
+forms.town_block_contested = ""
+

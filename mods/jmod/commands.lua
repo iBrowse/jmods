@@ -29,16 +29,16 @@ minetest.register_chatcommand("load_arc", {
 	description = "",
 	func =
 	function (name, param)
-		minetest.chat_send_all("loading data...")
-		local data, points = arcGIS.loadData(jmod.worldpath)
-		local m = arcGIS.map
-		m.nrows = data.nrows
-		m.ncols = data.ncols
-		m.xcorn = data.xcorn
-		m.ycorn = data.ycorn
-		m.csize = data.csize
-		m.nodata = data.nodata
-		m.points = points
+		local data, points = arcGIS.load_data(jmod.worldpath)
+		--local m = arcGIS.map
+		-- m.nrows = data.nrows
+		-- m.ncols = data.ncols
+		-- m.xcorn = data.xcorn
+		-- m.ycorn = data.ycorn
+		-- m.csize = data.csize
+		-- m.nodata = data.nodata
+		-- m.points = points
+		arcGIS.map.data, arcGIS.map.points = data, points
 	end
 	})
 
