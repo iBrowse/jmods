@@ -34,4 +34,4 @@ map.spawn = {
 	},
 }
 
-map.gen = {}
+map.gen = {}--
