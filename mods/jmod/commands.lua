@@ -1,4 +1,4 @@
-minetest.register_chatcommand("arcgen_here", {
+minetest.register_chatcommand("gen_minute", {
 	params = "",
 	description = "",
 	func = 
@@ -7,7 +7,13 @@ minetest.register_chatcommand("arcgen_here", {
 		if not player then
 			return false, "Player not found"
 		end
-		arcGIS.arc_gen_default(player:getpos().x, player:getpos().y, player:getpos().z)
+
+		local quad = {
+			x = math.floor(player:getpos().x / (60*(32/arcGIS.map.scale))) + 30,
+			z = 29-math.floor(player:getpos().z / (60*(32/arcGIS.map.scale))),
+		}
+
+		arcGIS.gen_minute(quad.z, quad.x)
 	end
 })
 
@@ -30,14 +36,6 @@ minetest.register_chatcommand("load_arc", {
 	func =
 	function (name, param)
 		local data, points = arcGIS.load_data(jmod.worldpath)
-		--local m = arcGIS.map
-		-- m.nrows = data.nrows
-		-- m.ncols = data.ncols
-		-- m.xcorn = data.xcorn
-		-- m.ycorn = data.ycorn
-		-- m.csize = data.csize
-		-- m.nodata = data.nodata
-		-- m.points = points
 		arcGIS.map.data, arcGIS.map.points = data, points
 	end
 	})

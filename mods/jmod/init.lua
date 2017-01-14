@@ -1,4 +1,6 @@
 jmod = {}
+jmod.world = {}
+jmod.world.connected = {}
 
 jmod.modpath = minetest.get_modpath("jmod")
 jmod.worldpath = minetest.get_worldpath()
