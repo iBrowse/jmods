@@ -1,22 +1,17 @@
 
-
-function arcGIS.get_player_coords(player)
-	return arcGIS.pos_to_coord(player:getpos())
-end
-
 function arcGIS.pos_to_coord(pos)
 	local latOff = (pos.z / (32/arcGIS.map.scale))  -- in arc-secs
 	local longOff = (pos.x / (32/arcGIS.map.scale)) --nodes per arc-sec
 	local coord = {
 		latitude = {
-			degrees = map.origin.latitude.degrees + math.floor(latOff/3600),
-			minutes = map.origin.latitude.minutes + math.floor(latOff/60)+30,
-			seconds = map.origin.latitude.seconds + latOff,
+			degrees = arcGIS.map.origin.latitude.degrees,
+			minutes = arcGIS.map.origin.latitude.minutes + math.floor(latOff/60)+30,
+			seconds = arcGIS.map.origin.latitude.seconds + latOff - math.floor(arcGIS.map.origin.latitude.seconds+latOff),
 		},
 		longitude = {
-			degrees = map.origin.longitude.degrees + math.floor(longOff/3600),
-			minutes = map.origin.longitude.degrees + math.floor(longOff/60)+30,
-			seconds = map.origin.longitude.seconds + longOff,
+			degrees = arcGIS.map.origin.longitude.degrees,
+			minutes = arcGIS.map.origin.longitude.degrees + (math.floor(longOff/60)*-1)+30,
+			seconds = arcGIS.map.origin.longitude.seconds + longOff,
 		},
 	}
 	return coord
@@ -29,14 +24,15 @@ function arcGIS.set_origin(lat, long)
 end
 
 function arcGIS.set_scale(scale)
-	arcGIS.map.scale = scale  -- 2 is 1:2 is 16x16 nodes per arc-second
+	arcGIS.map.scale = scale  -- 8 is 1:8 is 4x4 nodes per arc-second
 end
 
 --true or false to set whether server follows players to generate map
-function arcGIS.arcgen_track_players(sw)
-	arcGIS.map.track_players = sw
+function arcGIS.arcgen_track_players(bool)
+	arcGIS.map.track_players = bool
 end
 
+--TODO
 function arcGIS.gen(pos) --generates 12"x12" around the player
 	local s = 32/arcGIS.map.scale
 
@@ -44,49 +40,8 @@ function arcGIS.gen(pos) --generates 12"x12" around the player
 		x = math.floor(pos.x/(s*60))+30,
 		z = 30-math.floor(pos.z/(s*60)),
 	}
-	
+
 end
-
---TODO: chop chop
-function arcGIS.arc_gen_default(x, y, z)
-	local scale = arcGIS.map.scale/2
-	local c_air = minetest.get_content_id("air")
-	local c_dirt = minetest.get_content_id("default:dirt")
-
-	local start_block = {
-		x = math.floor((x+scale)/scale),
-		y = math.floor((y+scale)/scale),
-		z = math.floor((z+scale)/scale),
-	}
-	local data = arcGIS.map.data
-	local points = arcGIS.map.points
-	minetest.chat_send_all("Generating "..(data.nrows*data.ncols).." points of terrain...")
-	local nodataval = data.nodata
-	for r, row in ipairs(points) do
-		for c, height in ipairs(row) do
-			if height == nodataval then minetest.chat_send_all("nodataval") break end 
-			--TODO: it's ok if last value in row == nodataval
-			--other nodatas should be smoothed out/in using surrounding values
-			local minp = {
-				x = ((start_block.x+c)*scale)-(scale-1),
-				y = (height/2)-7,
-				z = ((start_block.z+r)*scale)-(scale-1),
-			}
-			local maxp = {
-				x = (start_block.x+c)*scale,
-				y = height/2,
-				z = (start_block.z+r)*scale,
-			}
-			local voxar = VoxelArea:new{MinEdge={x=minp.x,y=minp.y,z=minp.z},MaxEdge={x=maxp.x,y=maxp.y,z=maxp.z}}
-			local iter = voxar:iterp(minp,maxp)
-			for node in iter do
-				local ipos = voxar:position(node)
-				minetest.set_node(ipos, {name="default:dirt"})
-			end
-		end
-	end
-end
-
 
 -- "42N122W" for example specifies the area between lati =   42 and   43
 --												and long = -123 and -122 
@@ -108,37 +63,32 @@ function arcGIS.gen_minute(z, x)
 	local path = jmod.worldpath.."/quads/"..tostring(z).."_"..tostring(x)
 	local input = assert(io.input(path), "halp")
 	
-	--local points = {}
-
-	local r = 0
+	local points = {}
+	--local r = 0
 	while true do
 		local line = io.read()
 		if line == nil then minetest.chat_send_all("finished!") break end
 		--if r >= 3 then minetest.chat_send_all("jus testin") break end
-		r = r + 1
-
+		--r = r + 1
 		local array = {}
 		for v in string.gmatch(line, "%s([-%d]+)") do
 			array[#array+1] = v
-			
 		end
-		--points[#points+1] = array
-	
-		
-		for c, val in ipairs(array) do
-			--local row = (z*60)+r
-			--local col = (x*60)+c 
+		points[#points+1] = array
+	end
 
+	for r, array in ipairs(points) do 
+		for c, val in ipairs(array) do
 			--minetest.chat_send_all("start_block: "..start_block.x..", "..start_block.z.."   "..r.." : "..c.. ", val = "..val)
 			local maxp = {
 				x = start_block.x + (c*s),
-				y = val,
+				y = val/(arcGIS.map.scale/2),
 				z = start_block.z - (r*s),
 			}
 			--minetest.chat_send_all(maxp.x.." : "..maxp.z)
 			local minp = {
 				x = maxp.x - s,
-				y = maxp.y - (2*s),
+				y = maxp.y - 2*s,
 				z = maxp.z - s,
 			}
 			--minetest.chat_send_all("X "..minp.x.." : "..maxp.x)
@@ -161,16 +111,14 @@ function arcGIS.gen_minute(z, x)
 				minetest.set_node(ipos, {name="default:dirt"})
 			end
 		end
-		minetest.chat_send_all("cnt is "..r.." array is "..core.serialize(array))
-
+		minetest.chat_send_all(r)
 	end
 end
-
 
 function arcGIS.gen_seconds(points)--should only be "-values within 3'x3' of player
 	local scale = arcGIS.map.scale/2
 	local c_air = minetest.get_content_id("air")
-	local c_dirt = minetest.get_content_id("default:dirt")
+	local c_dirt = minetest.get_content_id("default:dirt_with_grass")
 	
 	local data = arcGIS.map.loaded
 	local nodataval = arcGIS.map.data.nodata
@@ -203,9 +151,20 @@ function arcGIS.gen_seconds(points)--should only be "-values within 3'x3' of pla
 	end
 end
 
-function arcGIS.load_data(path)
-	local data = {}
-	local points = {}
+function arcGIS.get_height(pos)
+	local c = arcGIS.pos_to_coord(pos)
+	local latMin = c.latitude.minutes
+	local longMin = c.longitude.minutes
+	local latSec = c.latitude.seconds
+	local longSec = c.longitude.seconds
+
+	local points = io.input(jmod.worldpath.."/"..tostring(lat.min)..tostring(lon.min)) 
+	return points[lat.sec][lon.sec]
+end
+
+--A CRUNKER DATA CHUNKER
+function arcGIS.to_quads(path)
+	local data, points = {}, {}
 	local filepath = path.."/"..arcGIS.map.quad
 	local input = assert(io.input(filepath), "could not load arc_map")
 	local count = 0
@@ -215,29 +174,13 @@ function arcGIS.load_data(path)
 		local line = io.read() 
 		if line == nil then break end
 
-		--# infoStart, infoEnd, infoData
+		-- infoStart, infoEnd, infoData
 		local iS, iE, iD = string.find(line, '^(%S+)%s+')
 		if iD then
 			local _,_,num = string.find(line, '%s+(%S+)$')
-
-			if iD == "ncols" then
-				data.ncols = num
-				minetest.chat_send_all("added [ncols] "..data.ncols)
-			elseif iD == "nrows" then	
-				data.nrows = num
-				minetest.chat_send_all("added [nrows] "..data.nrows)
-			elseif iD == "xllcorner" then
-				data.xcorn = num
-				minetest.chat_send_all("added [xcorn] "..data.xcorn)
-			elseif iD == "yllcorner" then
-				data.ycorn = num--line:match('%S+$')
-				minetest.chat_send_all("added [ycorn] "..data.ycorn)
-			elseif iD == "cellsize" then
-				data.csize = num--line:match('%S+$')
-				minetest.chat_send_all("added [csize] "..data.csize)
-			elseif iD == "NODATA_value" then
-				data.nodata = num
-				minetest.chat_send_all("added [nodata] "..data.nodata)
+			if iD == "ncols"or"nrows"or"xllcorner"or"yllcorner"or"cellsize"or"NODATA_value" then
+				data[iD] = num
+				minetest.chat_send_all("added data["..iD.."] "..data[iD])
 			end
 		else
 			local cnt = 0
@@ -248,12 +191,10 @@ function arcGIS.load_data(path)
 			end
 			points[#points+1] = arr
 			minetest.chat_send_all("cnt is "..cnt)
-		end
+		end 
 	end
 	input:close()
-
 	minetest.chat_send_all("got data from "..count.." lines!")
-
 	for r=0,59 do
 		for c=0,59 do
 			local output = assert(
@@ -271,14 +212,6 @@ function arcGIS.load_data(path)
 				output:write(line.."\n")
 			end
 			output:close()
-		end
-	end
-	--return data, points
+		end 
+	end 
 end
-
-
-
-
-
-
-

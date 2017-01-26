@@ -33,40 +33,66 @@ function jmod.player_set_model(player, model)
 
 end
 
-minetest.register_on_joinplayer(function(player)
+minetest.register_on_joinplayer(
+function(player)
+	local props = player:get_properties()
+
 	minetest.chat_send_all(player:get_player_name() .. " has joined the game!")
-	minetest.chat_send_all(player:get_properties().mesh)
+	minetest.chat_send_all(props.hp_max)
 	
-	if not player:get_properties({"mode"}) then
-		player:set_properties({mode = "demi"})
-		minetest.chat_send_all(player.mode)
+	if props.mode == nil then
+		minetest.chat_send_all("setting you to demi mode")
+		props.mode = "demi"
 	end
-	if not player.demi_height then
-		player:set_properties({demi_height = 3})
+	if props.demi_level == nil then
+		props.demi_level = 5
 	end
-	if not player.home then
-		player:set_properties({home = {0, 0, 0}})
+	if props.home == nil then
+		props.home = {x=0,y=0,z=0}
+	end
+	player:set_properties(props)
+
+	if props.mode == "demi" then
+		jmod.set_demi(player)
 	end
 
-	if player.mode == "demi" then
-		player:set_physics_override({
-			speed = 2.0,
-			jump = 0,
-			gravity = 0,
-			sneak = false,
-			sneak_glitch = false
-		})
+	jmod.world.connected[#jmod.world.connected+1] = player:get_player_name()
 
-		--player:set_model(none)
-		
-		player:setpos({
-			player.home.pos.x,
-			player.home.pos.y + player.demi_height,
-			player.home.pos.z
-		})
-	end
 end)
 
 
+function jmod.set_demi(player)
+	player:set_physics_override({
+		speed = 5.0,
+		jump = 0.0,
+		gravity = 0.0,
+		sneak = false,
+		sneak_glitch = false
+	})
+end
+
+
+minetest.register_globalstep(
+function(dtime)
+	--minetest.chat_send_all("keep steppin at your own pace")
+	for _,name in ipairs(jmod.world.connected) do
+		--minetest.chat_send_all(_.." and "..name)
+		local player = minetest.get_player_by_name(name)
+		local props = player:get_properties()
+		--minetest.chat_send_all(props.mode)
+		if player:get_properties().mode == "demi" then
+			minetest.chat_send_all("woo")
+			local demi_height = player:get_properties().demi_level+5
+			local pos = player:getpos()
+
+			local val = arcGIS.get_height(pos)
+
+			local height = pos.y - val
+			if not height == demi_height then
+				player:setpos({x=pos.x,y=val+demi_height,z=pos.z})
+			end
+		end
+	end
+end)
 
 

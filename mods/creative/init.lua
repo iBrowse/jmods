@@ -13,8 +13,8 @@ if minetest.setting_getbool("creative_mode") then
 	minetest.register_item(":", {
 		type = "none",
 		wield_image = "wieldhand.png",
-		wield_scale = {x = 1, y = 1, z = 2.5},
-		range = 10,
+		wield_scale = {x = 1, y = 1, z = 3},
+		range = 16,
 		tool_capabilities = {
 			full_punch_interval = 0.5,
 			max_drop_level = 3,
@@ -30,6 +30,7 @@ if minetest.setting_getbool("creative_mode") then
 	})
 
 	minetest.register_on_placenode(function(pos, newnode, placer, oldnode, itemstack)
+		
 		return true
 	end)
 

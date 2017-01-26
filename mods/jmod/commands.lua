@@ -3,7 +3,7 @@ minetest.register_chatcommand("gen_minute", {
 	description = "",
 	func = 
 	function (name, param)
-		local player = minetest.get_player_by_name(name)
+		local player = core.get_player_by_name(name)
 		if not player then
 			return false, "Player not found"
 		end
@@ -24,22 +24,23 @@ minetest.register_chatcommand("my_coord", {
 	function (name, param)
 		core.chat_send_all(
 			core.serialize(
-				arcGIS.get_player_coords(
-					core.get_player_by_name(name)
+				arcGIS.pos_to_coord(
+					minetest.get_player_by_name(name):getpos()
 		)	)	)
 	end
 })
 
-minetest.register_chatcommand("load_arc", {
+minetest.register_chatcommand("arc_to_quads", {
 	params = "",
 	description = "",
 	func =
 	function (name, param)
-		local data, points = arcGIS.load_data(jmod.worldpath)
+		local data, points = arcGIS.to_quads(jmod.worldpath)
 		arcGIS.map.data, arcGIS.map.points = data, points
 	end
-	})
+})
 
+--prints the specified data
 minetest.register_chatcommand("arc_data", {
 	params = "",
 	description = "",
