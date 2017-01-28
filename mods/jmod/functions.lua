@@ -3,15 +3,15 @@ function arcGIS.pos_to_coord(pos)
 	local latOff = (pos.z / (32/arcGIS.map.scale))  -- in arc-secs
 	local longOff = (pos.x / (32/arcGIS.map.scale)) --nodes per arc-sec
 	local coord = {
-		latitude = {
-			degrees = arcGIS.map.origin.latitude.degrees,
-			minutes = arcGIS.map.origin.latitude.minutes + math.floor(latOff/60)+30,
-			seconds = arcGIS.map.origin.latitude.seconds + latOff - math.floor(arcGIS.map.origin.latitude.seconds+latOff),
+		lat = {
+			deg = arcGIS.map.origin.lat.deg,
+			min = arcGIS.map.origin.lat.min + math.floor(latOff/60),
+			sec = arcGIS.map.origin.lat.sec + (math.floor(latOff) % 60),
 		},
-		longitude = {
-			degrees = arcGIS.map.origin.longitude.degrees,
-			minutes = arcGIS.map.origin.longitude.degrees + (math.floor(longOff/60)*-1)+30,
-			seconds = arcGIS.map.origin.longitude.seconds + longOff,
+		long = {
+			deg = arcGIS.map.origin.lon.deg,
+			min = arcGIS.map.origin.lon.min + (math.floor(longOff/60)*-1),
+			sec = arcGIS.map.origin.lon.sec + (math.floor(longOff) % 60),
 		},
 	}
 	return coord
@@ -153,13 +153,25 @@ end
 
 function arcGIS.get_height(pos)
 	local c = arcGIS.pos_to_coord(pos)
-	local latMin = c.latitude.minutes
-	local longMin = c.longitude.minutes
-	local latSec = c.latitude.seconds
-	local longSec = c.longitude.seconds
+	local latMin = c.lat.min
+	local longMin = c.long.min
+	local latSec = c.lat.sec
+	local longSec = c.long.sec
 
-	local points = io.input(jmod.worldpath.."/"..tostring(lat.min)..tostring(lon.min)) 
-	return points[lat.sec][lon.sec]
+	local input = io.input(jmod.worldpath.."/quads/".. tostring(longMin) .."_".. tostring(latMin)) 
+	local points = {}
+	while true do
+		local line = io.read()
+		if line == nil then break end
+		--if r >= 3 then minetest.chat_send_all("jus testin") break end
+		--r = r + 1
+		local array = {}
+		for v in string.gmatch(line, "%s([-%d]+)") do
+			array[#array+1] = v
+		end
+		points[#points+1] = array
+	end
+	return points[latSec][longSec]
 end
 
 --A CRUNKER DATA CHUNKER
@@ -195,8 +207,8 @@ function arcGIS.to_quads(path)
 	end
 	input:close()
 	minetest.chat_send_all("got data from "..count.." lines!")
-	for r=0,59 do
-		for c=0,59 do
+	for r=1,60 do
+		for c=1,60 do
 			local output = assert(
 				io.open(
 					jmod.worldpath.."/quads/"..tostring(r).."_"..tostring(c),

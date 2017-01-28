@@ -10,9 +10,9 @@ function jmod.player_register_model(name, modelDef)
 	models[name] = modelDef
 end
 
---
+
 -- Default player appearance
---[[jmod.player_register_model("character.b3d", {
+jmod.player_register_model("character.b3d", {
 	animation_speed = 30,
 	textures = {"character.png", },
 	animations = {
@@ -24,7 +24,8 @@ end
 		walk_mine = { x=200, y=219, },
 		sit       = { x= 81, y=160, },
 	},
-}) ]]
+})
+
 
 
 
@@ -35,28 +36,35 @@ end
 
 minetest.register_on_joinplayer(
 function(player)
-	local props = player:get_properties()
+	local name = player:get_player_name()
+	jmod.players[name] = jmod.players[name] or {}
 
-	minetest.chat_send_all(player:get_player_name() .. " has joined the game!")
-	minetest.chat_send_all(props.hp_max)
-	
-	if props.mode == nil then
-		minetest.chat_send_all("setting you to demi mode")
-		props.mode = "demi"
+	local info = jmod.players[name]
+
+		
+	if not info.mode then
+		minetest.chat_send_all("setting "..name.." to demi mode")
+		info.mode = "demi"
+		--props.mode = "demi"
+		--minetest.chat_send_all("props.mode is "..props.mode)
 	end
+
+	minetest.chat_send_all(name.." has joined the game in "..info.mode.." mode!")
+	minetest.chat_send_all(core.serialize(info))
+
+
+	jmod.set_demi(player)
+	--[[
 	if props.demi_level == nil then
 		props.demi_level = 5
 	end
 	if props.home == nil then
 		props.home = {x=0,y=0,z=0}
-	end
-	player:set_properties(props)
+	end  ]]
+	--player:set_properties(props)
 
-	if props.mode == "demi" then
-		jmod.set_demi(player)
-	end
 
-	jmod.world.connected[#jmod.world.connected+1] = player:get_player_name()
+	--jmod.world.connected[#jmod.world.connected+1] = player:get_player_name()
 
 end)
 
@@ -75,19 +83,22 @@ end
 minetest.register_globalstep(
 function(dtime)
 	--minetest.chat_send_all("keep steppin at your own pace")
-	for _,name in ipairs(jmod.world.connected) do
+	for name, data in pairs(jmod.players) do
 		--minetest.chat_send_all(_.." and "..name)
 		local player = minetest.get_player_by_name(name)
-		local props = player:get_properties()
-		--minetest.chat_send_all(props.mode)
-		if player:get_properties().mode == "demi" then
-			minetest.chat_send_all("woo")
-			local demi_height = player:get_properties().demi_level+5
+		local info = jmod.players[name]
+		if info.mode == "demi" then
+
+			local demi_height = 10
 			local pos = player:getpos()
+			local val = arcGIS.get_height({
+				x=math.floor(pos.x),
+				y=math.floor(pos.y),
+				z=math.floor(pos.z),
+			})
 
-			local val = arcGIS.get_height(pos)
-
-			local height = pos.y - val
+			local height = (pos.y*4) - val
+			core.chat_send_all(height)
 			if not height == demi_height then
 				player:setpos({x=pos.x,y=val+demi_height,z=pos.z})
 			end
