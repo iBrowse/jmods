@@ -39,33 +39,22 @@ function(player)
 	local name = player:get_player_name()
 	jmod.players[name] = jmod.players[name] or {}
 
-	local info = jmod.players[name]
+	local data = jmod.players[name]
 
 		
-	if not info.mode then
+	if not data.mode then
 		minetest.chat_send_all("setting "..name.." to demi mode")
-		info.mode = "demi"
-		--props.mode = "demi"
-		--minetest.chat_send_all("props.mode is "..props.mode)
+		data.mode = "demi"
 	end
+	if not data.points then data.points = {} end
+	if not data.quad then data.quad = "" end
 
-	minetest.chat_send_all(name.." has joined the game in "..info.mode.." mode!")
+	minetest.chat_send_all(name.." has joined the game in "..data.mode.." mode!")
 	minetest.chat_send_all(core.serialize(info))
 
+	jmod.players[name].quad = arcGIS.pos_to_coord(player:getpos()) or {}
 
 	jmod.set_demi(player)
-	--[[
-	if props.demi_level == nil then
-		props.demi_level = 5
-	end
-	if props.home == nil then
-		props.home = {x=0,y=0,z=0}
-	end  ]]
-	--player:set_properties(props)
-
-
-	--jmod.world.connected[#jmod.world.connected+1] = player:get_player_name()
-
 end)
 
 
@@ -84,20 +73,36 @@ minetest.register_globalstep(
 function(dtime)
 	--minetest.chat_send_all("keep steppin at your own pace")
 	for name, data in pairs(jmod.players) do
-		--minetest.chat_send_all(_.." and "..name)
 		local player = minetest.get_player_by_name(name)
-		local info = jmod.players[name]
-		if info.mode == "demi" then
+		
+		if data.arcgis then
+			local quad = arcGIS.pos_to_coord(player:getpos()).lat.min..
+				"_"..arcGIS.pos_to_coord(player:getpos()).lon.min
+			if not data.quad == quad then
+				data.quad = quad
+				local input = assert(io.input(jmod.worldpath.."/quads/"..quad), "hlhhulh")
+				local points = {}
+				while true do
+					local line = io.read()
+					if line == nil then break end
+					local array = {}
+					for v in string.gmatch(line, "%s([-%d]+)") do
+						array[#array+1] = v
+					end
+					points[#points+1] = array
+				end
+				data.points = points
+			end
+		end
+
+		if data.mode == "demi" then
 
 			local demi_height = 10
 			local pos = player:getpos()
-			local val = arcGIS.get_height({
-				x=math.floor(pos.x),
-				y=math.floor(pos.y),
-				z=math.floor(pos.z),
-			})
+			local c = arcGIS.pos_to_coord(pos)
+			local val = data.points[c.lat.sec][c.lon.sec]/(32/jmod.map.scale)
 
-			local height = (pos.y*4) - val
+			local height = pos.y - val/4
 			core.chat_send_all(height)
 			if not height == demi_height then
 				player:setpos({x=pos.x,y=val+demi_height,z=pos.z})
