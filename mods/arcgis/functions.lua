@@ -45,11 +45,9 @@ end
 
 -- "42N122W" for example specifies the area between lati =   42 and   43
 --												and long = -123 and -122 
+--
 -- entering "/gen 0 0" will gen the upper-left (NW) minute
--- entering "/gen 0 59" will gen the upper-right (NE) minute
--- entering "/gen 59 0" will gen the lower-left (SW) minute 
--- entering "/gen 59 59" will gen the lower-right (SE) minute
--- each square minute is a 60x60 array of elev values 
+-- each minute is a 60x60 array of elev values 
 function arcGIS.gen_minute(z, x)
 	local s = 32/arcGIS.map.scale
 

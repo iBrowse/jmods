@@ -1,17 +1,22 @@
 jmod = {}
-jmod.players = {}
-jmod.world = {}
-
-jmod.modpath = minetest.get_modpath("jmod")
 jmod.worldpath = minetest.get_worldpath()
+jmod.modpath = minetest.get_modpath("jmod")
+
+jmod.mods = assert(io.input(jmod.worldpath.."modconfig.txt"),"failed to load modconfig")
+
+for mod, pairs in pairs(loadstring(io.read("*a"))) do
+	assert(dofile(jmod.modpath..mod),"failed to load mod "..mod))
+end
+
+jmod.world = {}
+jmod.players = {}
+jmod.timers = {}
 
 
---[[ JMOD contains tools to assist world creation and management
 
-all objects are stored in the address of the smallest VoxelAddress 
-that fully encloses the object.
 
-]]
+
+--[[ JMOD contains tools to assist world creation and management ]]
 
 
 
