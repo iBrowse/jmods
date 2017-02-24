@@ -2,6 +2,10 @@ arcGIS = {}
 arcGIS.map = {}
 local map = arcGIS.map
 
+dofile(jmod.modpath.."/functions.lua")
+dofile(jmod.modpath.."/arcgis.lua")
+dofile(jmod.modpath.."/commands.lua")
+
 map.data = {}
 local data = arcGIS.map.data
 data.nrows, data.ncols, data.xcorn, data.ycorn, data.csize, data.nodata = 0,0,0,0,0,0

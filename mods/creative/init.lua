@@ -1,3 +1,4 @@
+--[[
 dofile(minetest.get_modpath("creative") .. "/inventory.lua")
 
 if minetest.setting_getbool("creative_mode") then
@@ -49,3 +50,4 @@ if minetest.setting_getbool("creative_mode") then
 		end
 	end
 end
+]]

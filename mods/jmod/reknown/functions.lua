@@ -48,14 +48,12 @@ function towns.found_town(posIn, nameIn, founder)
 	end
 	
 	-- alles klar so machen wir den Town
-
 	local new_town = { 
 		id 			= #towns.registry+1,
 		name 		= nameIn,
 		pos 		= posIn,
 		size 		= 10,
 		territory 	= {},
-
 	}
 	table.insert(towns.registry, new_town)
 	towns.town_to_file(new_town)

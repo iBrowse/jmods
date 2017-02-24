@@ -1,6 +1,6 @@
 towns = {}
-towns.modpath = minetest.get_modpath("towns")
-towns.worldfile = minetest.get_worldpath() .. "/towns"
+towns.modpath = minetest.get_modpath("reknown")
+towns.worldfile = minetest.get_worldpath() .. "/reknown"
 towns.gui_bg = "bgcolor[#A55B;true]"
 towns.gui_bg_img = "background[5,5;1,1;]"
 

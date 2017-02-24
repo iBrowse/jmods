@@ -16,8 +16,8 @@ mintest.register_entity("towns:villager",{
 	}
 )
 
-minetest.register_entity("towns:town_token",{
-	hp_max = 100000,
+minetest.register_entity("towns:town_center",{
+	hp_max = 10000,
 	physical = true,
 	weight = 50000,
 	collisionbox = {-5, -0.5, -5, 5, 0.5, 5},

@@ -1,6 +1,6 @@
 <map version="freeplane 1.3.0">
 <!--To view this file, download free mind mapping software Freeplane from http://freeplane.sourceforge.net -->
-<node TEXT="Minetest" ID="ID_1723255651" CREATED="1283093380553" MODIFIED="1486030732130"><hook NAME="MapStyle" zoom="0.75">
+<node TEXT="Minetest" ID="ID_1723255651" CREATED="1283093380553" MODIFIED="1487227893734"><hook NAME="MapStyle" zoom="0.75">
     <properties show_icon_for_attributes="true" show_note_icons="true"/>
 
 <map_styles>
@@ -52,19 +52,11 @@
 </hook>
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <font SIZE="30" BOLD="true"/>
-<node TEXT="Overview" POSITION="left" ID="ID_1061933643" CREATED="1481542558095" MODIFIED="1486030732129" HGAP="637" VSHIFT="-9">
-<edge COLOR="#00ffff"/>
-<hook NAME="FreeNode"/>
-<cloud COLOR="#f0f0f0" SHAPE="ROUND_RECT"/>
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<node TEXT="" ID="ID_1373114307" CREATED="1481542569638" MODIFIED="1481542593759" HGAP="43" VSHIFT="-16"/>
-<node TEXT="Subgame containing a new mode of play and some new ways of storing resources" ID="ID_1813979887" CREATED="1481540797545" MODIFIED="1481542584270" HGAP="-217" VSHIFT="35"/>
-</node>
-<node TEXT="Map Gen" POSITION="right" ID="ID_1459199691" CREATED="1485780653147" MODIFIED="1485781246811" HGAP="215" VSHIFT="-848">
+<node TEXT="Map Gen" POSITION="right" ID="ID_1459199691" CREATED="1485780653147" MODIFIED="1486587584515" HGAP="215" VSHIFT="-894">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <cloud COLOR="#f0f0f0" SHAPE="ROUND_RECT"/>
 <hook NAME="FreeNode"/>
-<node TEXT="Parameters" ID="ID_1624326473" CREATED="1485781222648" MODIFIED="1485781398698" HGAP="214" VSHIFT="45">
+<node TEXT="Parameters" ID="ID_1624326473" CREATED="1485781222648" MODIFIED="1486587582166" HGAP="121" VSHIFT="-167">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <font SIZE="20"/>
 <node TEXT="mgname" ID="ID_1849888641" CREATED="1485764398660" MODIFIED="1485781398698" VSHIFT="69">
@@ -109,6 +101,14 @@
 </node>
 </node>
 </node>
+<node TEXT="Overview" POSITION="left" ID="ID_1061933643" CREATED="1481542558095" MODIFIED="1486030732129" HGAP="637" VSHIFT="-9">
+<edge COLOR="#00ffff"/>
+<hook NAME="FreeNode"/>
+<cloud COLOR="#f0f0f0" SHAPE="ROUND_RECT"/>
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="" ID="ID_1373114307" CREATED="1481542569638" MODIFIED="1481542593759" HGAP="43" VSHIFT="-16"/>
+<node TEXT="Subgame containing a new mode of play and some new ways of storing resources" ID="ID_1813979887" CREATED="1481540797545" MODIFIED="1481542584270" HGAP="-217" VSHIFT="35"/>
+</node>
 <node TEXT="Reknown" POSITION="right" ID="ID_1473720251" CREATED="1481540216877" MODIFIED="1485337348379" HGAP="-349" VSHIFT="-78">
 <edge COLOR="#ff0000"/>
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
@@ -118,7 +118,10 @@
 <edge COLOR="#007c00"/>
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <node TEXT="Patron" ID="ID_631580223" CREATED="1481542608605" MODIFIED="1481575893853" HGAP="82" VSHIFT="24">
-<node TEXT="Patrons are the NPCs spawned by and controlled by players. They perform various jobs and require upkeep." ID="ID_1230337747" CREATED="1481542622184" MODIFIED="1481542739092"/>
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="Patrons are the NPCs spawned by and controlled by players. They perform various jobs and require upkeep." ID="ID_1230337747" CREATED="1481542622184" MODIFIED="1481542739092">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
 </node>
 </node>
 <node TEXT="Modes" LOCALIZED_STYLE_REF="default" POSITION="right" ID="ID_703544647" CREATED="1481543041255" MODIFIED="1485763128625" HGAP="-612" VSHIFT="-468">
@@ -142,19 +145,267 @@
 <hook NAME="SummaryNode"/>
 </node>
 </node>
-<node TEXT="minetest" POSITION="right" ID="ID_1844217987" CREATED="1485763586409" MODIFIED="1485985018435" HGAP="202" VSHIFT="-240">
+<node TEXT="core tree" POSITION="right" ID="ID_1844217987" CREATED="1485763586409" MODIFIED="1486587615350" HGAP="509" VSHIFT="-322">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <font SIZE="20" BOLD="false"/>
-<node TEXT="minetest" ID="ID_1343241050" CREATED="1485767705482" MODIFIED="1485814118533" VSHIFT="246">
+<node TEXT="minetest" ID="ID_1343241050" CREATED="1485767705482" MODIFIED="1486587889864" HGAP="64" VSHIFT="-107">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <font SIZE="16"/>
-<node TEXT="registered_on_generateds" ID="ID_1990884834" CREATED="1485768752029" MODIFIED="1485768755645" VSHIFT="22">
+<node TEXT="minetest" ID="ID_1368106740" CREATED="1486587091532" MODIFIED="1486587103395" HGAP="42" VSHIFT="266">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="registered_on_generateds" ID="ID_1990884834" CREATED="1485768752029" MODIFIED="1486587103395" VSHIFT="26">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 </node>
 </node>
-<node TEXT="register_on_mapgen_init(function(mapgen_params))" ID="ID_1605708054" CREATED="1485763651558" MODIFIED="1485814092606" VSHIFT="90">
+<node TEXT="register" ID="ID_1946595265" CREATED="1486587118299" MODIFIED="1486587889863" HGAP="110" VSHIFT="91">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<richcontent TYPE="DETAILS">
+<node TEXT="abm" ID="ID_449329462" CREATED="1486587239596" MODIFIED="1486587886263" HGAP="9" VSHIFT="187">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="alias" ID="ID_1927178013" CREATED="1486587244704" MODIFIED="1486587245896">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="authentication_handler" ID="ID_221207007" CREATED="1486587246119" MODIFIED="1486587255903">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="chat_command" ID="ID_631716739" CREATED="1486587256230" MODIFIED="1486587267924">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="craft" ID="ID_1921994962" CREATED="1486587268075" MODIFIED="1486587268780">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="craft" ID="ID_1987994905" CREATED="1486587268947" MODIFIED="1486587270639">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="predict" ID="ID_158382824" CREATED="1486587270641" MODIFIED="1486587273003">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+<node TEXT="craft_item" ID="ID_406840920" CREATED="1486587278106" MODIFIED="1486587284217">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="decoration" ID="ID_1922319553" CREATED="1486587284440" MODIFIED="1486587287297">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="entity" ID="ID_1423129950" CREATED="1486587287528" MODIFIED="1486587290112">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="globalstep" ID="ID_960939266" CREATED="1486587290312" MODIFIED="1486587291848">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="lbm" ID="ID_1279630743" CREATED="1486587292168" MODIFIED="1486587295263">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="node" ID="ID_1945669660" CREATED="1486587222840" MODIFIED="1486587894853">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="(&quot;name&quot;, {node_def})" ID="ID_665154853" CREATED="1486587756552" MODIFIED="1486587961586" HGAP="44" VSHIFT="12">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<cloud COLOR="#f0f0f0" SHAPE="ROUND_RECT"/>
+<node TEXT="Node Definition Options" ID="ID_456453667" CREATED="1486587921659" MODIFIED="1486587961586" HGAP="49" VSHIFT="11">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+</node>
+<node TEXT="on" ID="ID_825611287" CREATED="1486587120808" MODIFIED="1486587719447">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="chat" ID="ID_1557711916" CREATED="1486587302857" MODIFIED="1486587309064">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="message" ID="ID_1647039082" CREATED="1486587309067" MODIFIED="1486587311500">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+<node TEXT="cheat" ID="ID_1813899677" CREATED="1486587314243" MODIFIED="1486587316484">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="craft" ID="ID_280609513" CREATED="1486587316827" MODIFIED="1486587317644">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="die" ID="ID_1781184180" CREATED="1486587318019" MODIFIED="1486587319799">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="player" ID="ID_15407810" CREATED="1486587319801" MODIFIED="1486587321451">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+<node TEXT="dig_node" ID="ID_521671162" CREATED="1486587324906" MODIFIED="1486587330689">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="generated" ID="ID_233939343" CREATED="1486587342982" MODIFIED="1486587345150">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="hp" ID="ID_616988728" CREATED="1486587345494" MODIFIED="1486587346994">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="change" ID="ID_1215721988" CREATED="1486587346996" MODIFIED="1486587348198">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+<node TEXT="item_eat" ID="ID_643425958" CREATED="1486587351965" MODIFIED="1486587373585">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="join_player" ID="ID_730338924" CREATED="1486587357124" MODIFIED="1486587370649">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="leave_player" ID="ID_1992317441" CREATED="1486587380712" MODIFIED="1486587383592">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="mapgen" ID="ID_103601906" CREATED="1486587122541" MODIFIED="1486587719446" VSHIFT="11">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="init" ID="ID_1053657604" CREATED="1486587124554" MODIFIED="1486587681160" VSHIFT="33">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<hook NAME="FirstGroupNode"/>
+</node>
+<node TEXT="function(mapgen_params)" ID="ID_232948523" CREATED="1486587681158" MODIFIED="1486587704950">
+<hook NAME="SummaryNode"/>
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+<node TEXT="new" ID="ID_1867630956" CREATED="1486587392502" MODIFIED="1486587730951">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="player" ID="ID_14062754" CREATED="1486587393410" MODIFIED="1486587730950">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+<node TEXT="place" ID="ID_817236200" CREATED="1486587398085" MODIFIED="1486587728773">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="node" ID="ID_1432087920" CREATED="1486587399187" MODIFIED="1486587728772">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+<node TEXT="player" ID="ID_978834011" CREATED="1486587404771" MODIFIED="1486587405982">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="receive" ID="ID_1112136366" CREATED="1486587405983" MODIFIED="1486587413486">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="fields" ID="ID_896285201" CREATED="1486587413488" MODIFIED="1486587414826">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+</node>
+<node TEXT="prejoin_player" ID="ID_409503220" CREATED="1486587424664" MODIFIED="1486587430422">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="protection_violation" ID="ID_431330060" CREATED="1486587434038" MODIFIED="1486587441492">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="punch_node" ID="ID_1966563285" CREATED="1486587442684" MODIFIED="1486587448420">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="respawn_player" ID="ID_150903175" CREATED="1486587448635" MODIFIED="1486587454459">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="shutdown" ID="ID_853791466" CREATED="1486587455010" MODIFIED="1486587459497">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="generated" ID="ID_503651662" CREATED="1486587154456" MODIFIED="1486587158040">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+<node TEXT="ore" ID="ID_542312681" CREATED="1486587466448" MODIFIED="1486587468192">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="privilege" ID="ID_1442789126" CREATED="1486587468512" MODIFIED="1486587473919">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="tool" ID="ID_449397290" CREATED="1486587474255" MODIFIED="1486587476135">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+<node TEXT="remove" ID="ID_60915268" CREATED="1486587485452" MODIFIED="1486587488624">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="node" ID="ID_1525251535" CREATED="1486587488625" MODIFIED="1486587489260">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+<node TEXT="request" ID="ID_1519626237" CREATED="1486587495539" MODIFIED="1486587499899">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="rollback" ID="ID_46699900" CREATED="1486587500042" MODIFIED="1486587502394">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="rotate" ID="ID_235511978" CREATED="1486587503010" MODIFIED="1486587504794">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="serialize" ID="ID_936013197" CREATED="1486587504985" MODIFIED="1486587506074">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="set" ID="ID_852188303" CREATED="1486587135188" MODIFIED="1486587137120">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="gen" ID="ID_12657344" CREATED="1486587146153" MODIFIED="1486587147686">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="notify" ID="ID_468520307" CREATED="1486587147688" MODIFIED="1486587150458">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+<node TEXT="mapgen" ID="ID_398008143" CREATED="1486587137124" MODIFIED="1486587139015">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="params" ID="ID_1567907785" CREATED="1486587139018" MODIFIED="1486587144635">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+<node TEXT="node" ID="ID_1165350420" CREATED="1486587542710" MODIFIED="1486587543923">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="node" ID="ID_983618775" CREATED="1486587525254" MODIFIED="1486587526170">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="level" ID="ID_1061531662" CREATED="1486587526172" MODIFIED="1486587528078">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+<node TEXT="noiseparam_defaults" ID="ID_664622245" CREATED="1486587548434" MODIFIED="1486587553945">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="player" ID="ID_1229932612" CREATED="1486587554625" MODIFIED="1486587556180">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="password" ID="ID_166174541" CREATED="1486587556181" MODIFIED="1486587557472">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="privs" ID="ID_155592412" CREATED="1486587559895" MODIFIED="1486587561591">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+<node TEXT="timeofday" ID="ID_686552947" CREATED="1486587562903" MODIFIED="1486587568198">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+<node TEXT="get" ID="ID_847526732" CREATED="1486587167078" MODIFIED="1486587169722">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="mapgen" ID="ID_1287170002" CREATED="1486587169724" MODIFIED="1486587171345">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="object" ID="ID_1274480079" CREATED="1486587171346" MODIFIED="1486587175461">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+</node>
+<node TEXT="emerge" ID="ID_666934836" CREATED="1486587183250" MODIFIED="1486587185014">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="area" ID="ID_1180541787" CREATED="1486587185016" MODIFIED="1486587186498">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+<node TEXT="delete" ID="ID_1297255482" CREATED="1486587186762" MODIFIED="1486587187806">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="area" ID="ID_767266216" CREATED="1486587187809" MODIFIED="1486587188322">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+<node TEXT="forceload" ID="ID_942576621" CREATED="1486587197424" MODIFIED="1486587205035">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="block" ID="ID_1990004120" CREATED="1486587205039" MODIFIED="1486587205855">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="free" ID="ID_1155852825" CREATED="1486587210854" MODIFIED="1486587212346">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="block" ID="ID_1111090597" CREATED="1486587212348" MODIFIED="1486587214806">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+</node>
+<node TEXT="spawn" ID="ID_1445511939" CREATED="1486587216061" MODIFIED="1486587217393">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="tree" ID="ID_521360434" CREATED="1486587217397" MODIFIED="1486587218573">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+<node TEXT="register_on_mapgen_init(function(mapgen_params))" ID="ID_1605708054" CREATED="1485763651558" MODIFIED="1486587181064" VSHIFT="71">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<richcontent TYPE="DETAILS" HIDDEN="true">
 
 <html>
   <head>
@@ -169,9 +420,9 @@
 </richcontent>
 <font SIZE="16" BOLD="false"/>
 </node>
-<node TEXT="set_mapgen_params(params)" ID="ID_245732418" CREATED="1485764068670" MODIFIED="1485814092610" VSHIFT="22">
+<node TEXT="set_mapgen_params(params)" ID="ID_245732418" CREATED="1485764068670" MODIFIED="1486587160832" VSHIFT="22">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<richcontent TYPE="DETAILS">
+<richcontent TYPE="DETAILS" HIDDEN="true">
 
 <html>
   <head>
@@ -201,9 +452,9 @@
 </node>
 </node>
 </node>
-<node TEXT="set_gen_notify(flags)" ID="ID_413209336" CREATED="1485775521468" MODIFIED="1485814092611">
+<node TEXT="set_gen_notify(flags)" ID="ID_413209336" CREATED="1485775521468" MODIFIED="1486587161624">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<richcontent TYPE="DETAILS">
+<richcontent TYPE="DETAILS" HIDDEN="true">
 
 <html>
   <head>
@@ -221,10 +472,10 @@
 </richcontent>
 <font SIZE="16"/>
 </node>
-<node TEXT="register_on_generated(function(minp, maxp, blockseed))" ID="ID_1212583651" CREATED="1485764706392" MODIFIED="1485814092613" VSHIFT="22">
+<node TEXT="register_on_generated(function(minp, maxp, blockseed))" ID="ID_1212583651" CREATED="1485764706392" MODIFIED="1486587162584" VSHIFT="22">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <font SIZE="16" BOLD="false"/>
-<richcontent TYPE="DETAILS">
+<richcontent TYPE="DETAILS" HIDDEN="true">
 
 <html>
   <head>
@@ -238,9 +489,9 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="get_mapgen_object(object)" ID="ID_1823398365" CREATED="1485768769072" MODIFIED="1485814092623" VSHIFT="22">
+<node TEXT="get_mapgen_object(object)" ID="ID_1823398365" CREATED="1485768769072" MODIFIED="1486587177445" VSHIFT="22">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<richcontent TYPE="DETAILS">
+<richcontent TYPE="DETAILS" HIDDEN="true">
 
 <html>
   <head>
@@ -391,8 +642,17 @@
 </node>
 </node>
 </node>
+<node TEXT="register_node( &quot;name&quot; , {nodedef})" ID="ID_925053030" CREATED="1486586620113" MODIFIED="1486587055540">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<font SIZE="16"/>
+<cloud COLOR="#f0f0f0" SHAPE="ROUND_RECT"/>
+<node TEXT="Node definition" ID="ID_1240978960" CREATED="1486587031340" MODIFIED="1486587049362" HGAP="-220" VSHIFT="109">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 </node>
-<node TEXT="Views" POSITION="right" ID="ID_390716104" CREATED="1481543167994" MODIFIED="1485744797548" HGAP="-282" VSHIFT="-208">
+</node>
+</node>
+</node>
+<node TEXT="Views" POSITION="right" ID="ID_390716104" CREATED="1481543167994" MODIFIED="1487227884463" HGAP="-342" VSHIFT="-121">
 <edge STYLE="bezier" COLOR="#00007c"/>
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <hook NAME="FreeNode"/>
@@ -418,12 +678,28 @@
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 </node>
 </node>
-<node TEXT="Jmod for core, Chapter for game, Visualis for RL utility" POSITION="right" ID="ID_1399536191" CREATED="1486030733931" MODIFIED="1486030850129">
+<node TEXT="Jmod for core, Chapter for game, Visualis for RL utility" POSITION="right" ID="ID_1399536191" CREATED="1486030733931" MODIFIED="1487227893733" HGAP="153" VSHIFT="-68">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 </node>
-<node TEXT="jmod" POSITION="right" ID="ID_186835296" CREATED="1485678510169" MODIFIED="1486071478532" HGAP="203" VSHIFT="58">
+<node TEXT="jmod" POSITION="right" ID="ID_186835296" CREATED="1485678510169" MODIFIED="1487824078930" HGAP="203" VSHIFT="58">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <font SIZE="20" BOLD="true"/>
+<node TEXT="player in uni mode" ID="ID_1663260741" CREATED="1487824068097" MODIFIED="1487841743835" HGAP="473" VSHIFT="13">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<hook NAME="FreeNode"/>
+<node TEXT="select New World" ID="ID_1991071131" CREATED="1487824120456" MODIFIED="1487841743834" VSHIFT="26">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="adjust size, settings, tribute..." ID="ID_125859822" CREATED="1487824127021" MODIFIED="1487841857741" VSHIFT="37">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="jmod.create_world()" ID="ID_291976421" CREATED="1487824140864" MODIFIED="1487841857740" VSHIFT="25">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+<node TEXT="new_world_gui" ID="ID_1888553844" CREATED="1487824193090" MODIFIED="1487824209404">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+</node>
 <node TEXT="jmodcore" ID="ID_357039725" CREATED="1485380840641" MODIFIED="1486110492652" HGAP="44" VSHIFT="537" BACKGROUND_COLOR="#ccffff">
 <font SIZE="16" BOLD="true" ITALIC="false"/>
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
@@ -15060,7 +15336,7 @@
 </node>
 </node>
 </node>
-<node TEXT="environment" ID="ID_948601762" CREATED="1485999307806" MODIFIED="1485999823055" VSHIFT="13">
+<node TEXT="environment" ID="ID_948601762" CREATED="1485999307806" MODIFIED="1487491746992" VSHIFT="13">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <node TEXT="grass" ID="ID_425612182" CREATED="1485999549698" MODIFIED="1485999823054" VSHIFT="51">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
@@ -15092,7 +15368,7 @@
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 </node>
 </node>
-<node TEXT="moss" ID="ID_1855056567" CREATED="1485999638966" MODIFIED="1485999683151">
+<node TEXT="moss" ID="ID_1855056567" CREATED="1485999638966" MODIFIED="1487491741804" HGAP="21" VSHIFT="13">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <node TEXT="green" ID="ID_1543168415" CREATED="1485999641989" MODIFIED="1485999683151" VSHIFT="53">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
@@ -15107,7 +15383,7 @@
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 </node>
 </node>
-<node TEXT="trees" ID="ID_1096610416" CREATED="1485999544750" MODIFIED="1485999710129">
+<node TEXT="trees" ID="ID_1096610416" CREATED="1485999544750" MODIFIED="1487491746991" VSHIFT="13">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <node TEXT="pine" ID="ID_376630146" CREATED="1485999691271" MODIFIED="1485999710128" VSHIFT="40">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
@@ -15178,12 +15454,12 @@
 </node>
 </node>
 </node>
-<node TEXT="arcgis" ID="ID_396511903" CREATED="1485938604487" MODIFIED="1485998707291" HGAP="43" VSHIFT="53">
+<node TEXT="arcgis" ID="ID_396511903" CREATED="1485938604487" MODIFIED="1486465950304" HGAP="43" VSHIFT="-8">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <font SIZE="16" BOLD="true"/>
 <cloud COLOR="#ffffcc" SHAPE="RECT"/>
 <edge STYLE="horizontal"/>
-<richcontent TYPE="DETAILS">
+<richcontent TYPE="DETAILS" HIDDEN="true">
 
 <html>
   <head>
@@ -15200,12 +15476,12 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="visualis" ID="ID_1579441373" CREATED="1485901055960" MODIFIED="1486029165030" HGAP="42" VSHIFT="-44">
+<node TEXT="visualis" ID="ID_1579441373" CREATED="1485901055960" MODIFIED="1487490518530" HGAP="47" VSHIFT="347">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <cloud COLOR="#ffcccc" SHAPE="RECT"/>
 <font SIZE="16" BOLD="true"/>
 <edge STYLE="horizontal"/>
-<richcontent TYPE="DETAILS">
+<richcontent TYPE="DETAILS" HIDDEN="true">
 
 <html>
   <head>
@@ -15218,7 +15494,7 @@
   </body>
 </html>
 </richcontent>
-<node TEXT="shapedef" ID="ID_1544892823" CREATED="1485926174454" MODIFIED="1485944008885" HGAP="1588" VSHIFT="8">
+<node TEXT="shapedef" ID="ID_1544892823" CREATED="1485926174454" MODIFIED="1487490518529" HGAP="348" VSHIFT="-355">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <hook NAME="FreeNode"/>
 <cloud COLOR="#f0f0f0" SHAPE="RECT"/>
@@ -15240,9 +15516,9 @@
 </node>
 <node TEXT="points" ID="ID_1308454784" CREATED="1485915015467" MODIFIED="1485926282095">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<node TEXT="[num]" ID="ID_1187794517" CREATED="1485920720876" MODIFIED="1485926282094" VSHIFT="13">
+<node TEXT="[num]" ID="ID_1187794517" CREATED="1485920720876" MODIFIED="1487490527997" VSHIFT="13">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<node TEXT="pos" ID="ID_876738690" CREATED="1485920802180" MODIFIED="1485926280799" VSHIFT="65">
+<node TEXT="pos" ID="ID_876738690" CREATED="1485920802180" MODIFIED="1487490527996" VSHIFT="28">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <node TEXT="x=0" ID="ID_1337245299" CREATED="1485923187079" MODIFIED="1485926278089" VSHIFT="106">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
@@ -15254,7 +15530,7 @@
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 </node>
 </node>
-<node TEXT="data = {}" ID="ID_1747167362" CREATED="1485923213182" MODIFIED="1485926240016" HGAP="21" VSHIFT="-30">
+<node TEXT="data = {}" ID="ID_1747167362" CREATED="1485923213182" MODIFIED="1487490526671" HGAP="21" VSHIFT="7">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 </node>
 </node>
@@ -15270,83 +15546,33 @@
 </node>
 </node>
 </node>
-<node TEXT="visualis = {}" ID="ID_1220801676" CREATED="1485901124649" MODIFIED="1486029165030" VSHIFT="109">
+<node TEXT="visualis" ID="ID_1692057516" CREATED="1487451935410" MODIFIED="1487489395787" HGAP="21" VSHIFT="54">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="horizontal"/>
-<richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      our namespace for all data visualization things
-    </p>
-  </body>
-</html>
-</richcontent>
+<cloud COLOR="#f0f0f0" SHAPE="ROUND_RECT"/>
+<node TEXT="formspecs" ID="ID_766661929" CREATED="1487451940566" MODIFIED="1487451989615" VSHIFT="29">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="registered" ID="ID_15847977" CREATED="1487451943220" MODIFIED="1487452028094" VSHIFT="27">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 </node>
-<node TEXT="visualis.formspecs = {}" ID="ID_1109200506" CREATED="1485931875054" MODIFIED="1485932234251" VSHIFT="13">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      windows, menus, indicators, etc
-    </p>
-  </body>
-</html>
-</richcontent>
-<edge STYLE="horizontal"/>
-</node>
-<node TEXT="visualis.shapes = {}" ID="ID_68711628" CREATED="1485901675767" MODIFIED="1485932224295" VSHIFT="13">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="horizontal"/>
-<richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      primitives
-    </p>
-  </body>
-</html>
-</richcontent>
-<node TEXT="" ID="ID_593010202" CREATED="1485932774375" MODIFIED="1485932774375">
+<node TEXT="register(name, formspec)" ID="ID_1855514729" CREATED="1487452037484" MODIFIED="1487452053977">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 </node>
 </node>
-<node TEXT="visualis.shapes:register" ID="ID_1938523300" CREATED="1485902014127" MODIFIED="1485924580331" VSHIFT="13">
+<node TEXT="shapes" ID="ID_1854001972" CREATED="1487451947564" MODIFIED="1487452022291">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="horizontal"/>
-<hook NAME="FirstGroupNode"/>
-<node TEXT="name" ID="ID_1013914531" CREATED="1485924557228" MODIFIED="1485926463572" VSHIFT="25">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="linear"/>
-<node TEXT="shapedef" ID="ID_776912879" CREATED="1485924563532" MODIFIED="1485926463572" HGAP="34" VSHIFT="1">
+<node TEXT="registered" ID="ID_424783172" CREATED="1487452013364" MODIFIED="1487452018882" VSHIFT="36">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 </node>
-</node>
-</node>
-<node TEXT="" ID="ID_1637606237" CREATED="1485924568050" MODIFIED="1485933279118" VSHIFT="-12">
-<hook NAME="SummaryNode"/>
+<node TEXT="register(name, shapedef)" ID="ID_848787148" CREATED="1487451949731" MODIFIED="1487452022289" VSHIFT="7">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<node TEXT="if" ID="ID_954359502" CREATED="1485933119894" MODIFIED="1485933279118" HGAP="15" VSHIFT="12">
+<node TEXT="if" ID="ID_954359502" CREATED="1485933119894" MODIFIED="1487451880684" HGAP="15" VSHIFT="25">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <hook NAME="FirstGroupNode"/>
-<node TEXT=" name not in pairs" ID="ID_822123067" CREATED="1485933065786" MODIFIED="1485933264765" HGAP="32" VSHIFT="27">
+<node TEXT=" name not in pairs" ID="ID_822123067" CREATED="1485933065786" MODIFIED="1487451882607" HGAP="8" VSHIFT="39">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <edge STYLE="linear"/>
 <hook NAME="FirstGroupNode"/>
-<node TEXT="self" ID="ID_1377345108" CREATED="1485933157853" MODIFIED="1485933178889" VSHIFT="12">
+<node TEXT="self" ID="ID_1377345108" CREATED="1485933157853" MODIFIED="1487451882607" HGAP="8" VSHIFT="25">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 </node>
 </node>
@@ -15364,25 +15590,15 @@
 </node>
 </node>
 </node>
-<node TEXT="function visualis.shapes:add" ID="ID_1585646059" CREATED="1485901703997" MODIFIED="1485932805936" VSHIFT="37">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="horizontal"/>
-<hook NAME="FirstGroupNode"/>
-<node TEXT="shapedef" ID="ID_1897147944" CREATED="1485932284126" MODIFIED="1485932805935" HGAP="30" VSHIFT="21">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 </node>
 </node>
-<node TEXT="" ID="ID_41317" CREATED="1485932288462" MODIFIED="1485932288463">
-<hook NAME="SummaryNode"/>
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 </node>
-</node>
-<node TEXT="combat" ID="ID_1922796009" CREATED="1485938839996" MODIFIED="1485998707295" HGAP="41">
+<node TEXT="combat" ID="ID_1922796009" CREATED="1485938839996" MODIFIED="1487489400027" HGAP="41" VSHIFT="134">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <font SIZE="16" BOLD="true"/>
 <cloud COLOR="#f0f0f0" SHAPE="RECT"/>
 <edge STYLE="horizontal"/>
-<richcontent TYPE="DETAILS">
+<richcontent TYPE="DETAILS" HIDDEN="true">
 
 <html>
   <head>
@@ -15396,12 +15612,12 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="beasts" ID="ID_1624100835" CREATED="1485938761068" MODIFIED="1485998707296" HGAP="39" VSHIFT="42">
+<node TEXT="beasts" ID="ID_1624100835" CREATED="1485938761068" MODIFIED="1486465945671" HGAP="39" VSHIFT="16">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <font SIZE="16" BOLD="true"/>
 <cloud COLOR="#f0f0f0" SHAPE="RECT"/>
 <edge STYLE="horizontal"/>
-<richcontent TYPE="DETAILS">
+<richcontent TYPE="DETAILS" HIDDEN="true">
 
 <html>
   <head>
@@ -15415,12 +15631,12 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="buildings" ID="ID_1946665101" CREATED="1485938650230" MODIFIED="1485998707297" HGAP="49" VSHIFT="65">
+<node TEXT="buildings" ID="ID_1946665101" CREATED="1485938650230" MODIFIED="1486465944170" HGAP="37" VSHIFT="20">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <font SIZE="16" BOLD="true"/>
 <cloud COLOR="#f0f0f0" SHAPE="RECT"/>
 <edge STYLE="horizontal"/>
-<richcontent TYPE="DETAILS">
+<richcontent TYPE="DETAILS" HIDDEN="true">
 
 <html>
   <head>
@@ -15434,7 +15650,7 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="patrons" ID="ID_1724410144" CREATED="1485938639818" MODIFIED="1485998707298" HGAP="136" VSHIFT="-12">
+<node TEXT="patrons" ID="ID_1724410144" CREATED="1485938639818" MODIFIED="1486466087307" HGAP="40" VSHIFT="14">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <richcontent TYPE="DETAILS">
 
@@ -15458,8 +15674,26 @@
 <font SIZE="16" BOLD="true"/>
 <cloud COLOR="#f0f0f0" SHAPE="RECT"/>
 <edge STYLE="horizontal"/>
+<node TEXT="entities.patron" ID="ID_1589109962" CREATED="1486466000336" MODIFIED="1486466361853" VSHIFT="-13">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="id" ID="ID_1766323262" CREATED="1486466353776" MODIFIED="1486466361853" VSHIFT="87">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 </node>
-<node TEXT="resources" ID="ID_1404895186" CREATED="1485938798358" MODIFIED="1485998707299" HGAP="213" VSHIFT="-1">
+<node TEXT="name" ID="ID_322227970" CREATED="1486466339807" MODIFIED="1486466341232">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="hp" ID="ID_563338612" CREATED="1486466342230" MODIFIED="1486466342414">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="register()" ID="ID_1434921623" CREATED="1486466062620" MODIFIED="1486466360211" VSHIFT="-6">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="spawn()" ID="ID_186122764" CREATED="1486466079653" MODIFIED="1486466082533">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+</node>
+<node TEXT="resources" ID="ID_1404895186" CREATED="1485938798358" MODIFIED="1486586102414" HGAP="44" VSHIFT="15">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <font SIZE="16" BOLD="true"/>
 <cloud COLOR="#f0f0f0" SHAPE="RECT"/>
@@ -15477,8 +15711,180 @@
   </body>
 </html>
 </richcontent>
+<node TEXT="dirt" ID="ID_924029716" CREATED="1486466418488" MODIFIED="1486586058497" VSHIFT="217">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Found practically everywhere and of no particularly great value, other than to farmers in mineral-depleted areas and for terraforming projects.
+    </p>
+  </body>
+</html>
+</richcontent>
 </node>
-<node TEXT="industry" ID="ID_1592122865" CREATED="1485938816998" MODIFIED="1485998707299" HGAP="296">
+<node TEXT="food" ID="ID_1253819060" CREATED="1486466424563" MODIFIED="1486586160471" VSHIFT="16">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      The most essential of resources, patrons will be of little help and may even starve to death without enough food. Luckily it can be gathered in plenty of ways between foraging, hunting, and farming.
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="FirstGroupNode"/>
+<node TEXT="berries" ID="ID_523375258" CREATED="1486586150871" MODIFIED="1486586160470" VSHIFT="39">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="apple" ID="ID_417284802" CREATED="1486529864042" MODIFIED="1486586159105" HGAP="18" VSHIFT="-2">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="wheat" ID="ID_389325771" CREATED="1486529873508" MODIFIED="1486529879989">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="greens" ID="ID_1644637475" CREATED="1486529880219" MODIFIED="1486529893337">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="mushrooms" ID="ID_1604159110" CREATED="1486529893696" MODIFIED="1486529907824">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+<node TEXT="wood" ID="ID_128141668" CREATED="1486466413213" MODIFIED="1486530077283" VSHIFT="11">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      After food comes wood, being necessary to begin expansion and improvement of buildings, tools, etc. Many different kinds can be found with different properties, which can be useful for different purposes.
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="pine" ID="ID_1618741181" CREATED="1486530058474" MODIFIED="1486530077282" VSHIFT="44">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="cedar" ID="ID_1417066439" CREATED="1486530060898" MODIFIED="1486530061539">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="oak" ID="ID_1993307644" CREATED="1486530061762" MODIFIED="1486530062107">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="ash" ID="ID_1887812111" CREATED="1486530063705" MODIFIED="1486530064026">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="apple" ID="ID_60431229" CREATED="1486530065089" MODIFIED="1486530065610">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="palm" ID="ID_1839459362" CREATED="1486530072327" MODIFIED="1486530073897">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+<node TEXT="stone" ID="ID_705638813" CREATED="1486466417513" MODIFIED="1486530939485" HGAP="9" VSHIFT="-25">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      The time-tested most solid way to do most things. Like dirt, is pretty much everywhere, but different kinds may be very useful for different purposes.
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="pumice" ID="ID_8958747" CREATED="1486530934008" MODIFIED="1486530937223" VSHIFT="43">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="granite" ID="ID_1667643952" CREATED="1486530913595" MODIFIED="1486530939483">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="basalt" ID="ID_222782014" CREATED="1486530918398" MODIFIED="1486530919511">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="diorite" ID="ID_181274146" CREATED="1486530919742" MODIFIED="1486530920655">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="sandstone" ID="ID_832608279" CREATED="1486530923646" MODIFIED="1486530925166">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+<node TEXT="Necessities" ID="ID_197120975" CREATED="1486530351305" MODIFIED="1486530366810">
+<hook NAME="SummaryNode"/>
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      These resources are absolutely necessary to maintain a settlement of any kind. This means that a player must have collected and stored a certain amount of these before any NPC will even think to become their patron. Usually these basic resources will attract the poor and less unskilled NPCs, the more reknowned ones preferring deals involving more precious resources.
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="copper" ID="ID_1347600514" CREATED="1486466527133" MODIFIED="1486530306970">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="used ~ 8000BC smelted 5000 cast 4000 alloyed:bronze 3500&#xa;aes cyprium &gt; cuprum &gt; copper" ID="ID_1937869334" CREATED="1486466874314" MODIFIED="1486530306968" VSHIFT="131">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="name = Cu" ID="ID_1976916129" CREATED="1486466573504" MODIFIED="1486466599744">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="atomic = 29" ID="ID_41011967" CREATED="1486466604007" MODIFIED="1486466608230">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="electron = [Ar]3d(10)4s(1)" ID="ID_1625719399" CREATED="1486467259668" MODIFIED="1486467290123">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="shells = {2,8,18,1}" ID="ID_771359498" CREATED="1486467211481" MODIFIED="1486467235389">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="ductile = true" ID="ID_1351665601" CREATED="1486466616685" MODIFIED="1486466622052">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="thermal conductivity = 401 W/(m*K)" ID="ID_255683967" CREATED="1486466628650" MODIFIED="1486466789864">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="electrical conductivity" ID="ID_1936320160" CREATED="1486466639393" MODIFIED="1486466657485">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="ore" ID="ID_1419582512" CREATED="1486466550092" MODIFIED="1486466553377">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+<node TEXT="tin" ID="ID_109617476" CREATED="1486466524285" MODIFIED="1486466526989">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="gold" ID="ID_1096834579" CREATED="1486466430726" MODIFIED="1486466501449" VSHIFT="11">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="iron" ID="ID_1595951347" CREATED="1486466534875" MODIFIED="1486530327516" VSHIFT="29">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="zinc" ID="ID_1419584400" CREATED="1486466536059" MODIFIED="1486466538515">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+<node TEXT="industry" ID="ID_1592122865" CREATED="1485938816998" MODIFIED="1486465959669" HGAP="36" VSHIFT="13">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <font SIZE="16" BOLD="true"/>
 <cloud COLOR="#f0f0f0" SHAPE="RECT"/>
@@ -15497,7 +15903,7 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="towns" ID="ID_1296543455" CREATED="1485678589162" MODIFIED="1486071502942" HGAP="69" VSHIFT="26">
+<node TEXT="towns" ID="ID_1296543455" CREATED="1485678589162" MODIFIED="1486465964540" HGAP="56" VSHIFT="13">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <font SIZE="16" BOLD="true"/>
 <cloud COLOR="#f0f0f0" SHAPE="RECT"/>
@@ -15569,6 +15975,44 @@
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 </node>
 </node>
+</node>
+</node>
+<node TEXT="modloader" POSITION="right" ID="ID_1758410111" CREATED="1482965132148" MODIFIED="1485814132690" HGAP="34" VSHIFT="164">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<font SIZE="20"/>
+<node TEXT="load jf_mapgen" ID="ID_1607208514" CREATED="1485337522136" MODIFIED="1485337651767">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="load jf_entities" ID="ID_1767926556" CREATED="1482990694521" MODIFIED="1485341352534">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="load structures" ID="ID_607781869" CREATED="1482990684425" MODIFIED="1482990694266">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="load towns" ID="ID_570790632" CREATED="1482990697473" MODIFIED="1482990699650">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+<node TEXT="mapgen" POSITION="right" ID="ID_215918480" CREATED="1485340615569" MODIFIED="1485814132691" HGAP="-6" VSHIFT="53">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<font SIZE="20"/>
+<node TEXT="terrain" ID="ID_246008591" CREATED="1485340623381" MODIFIED="1485340649384">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="weather" ID="ID_1073166237" CREATED="1485342035646" MODIFIED="1485342038062">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="erosion" ID="ID_1355196553" CREATED="1485342051461" MODIFIED="1485342052294">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="biomes" ID="ID_496917037" CREATED="1485340650479" MODIFIED="1485340651960">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="plants" ID="ID_1352751291" CREATED="1485342023694" MODIFIED="1485342024782">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="water" ID="ID_791059618" CREATED="1485340661911" MODIFIED="1485340664143">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 </node>
 </node>
 <node TEXT="Structures" POSITION="right" ID="ID_1400318764" CREATED="1481583582036" MODIFIED="1482015253016" HGAP="-458" VSHIFT="490" BACKGROUND_COLOR="#99ccff">
@@ -15828,44 +16272,6 @@
 </node>
 <node TEXT="xtendo" ID="ID_1783477898" CREATED="1481795019119" MODIFIED="1481795047595" HGAP="-580" VSHIFT="1664">
 <edge STYLE="hide_edge"/>
-</node>
-</node>
-<node TEXT="modloader" POSITION="right" ID="ID_1758410111" CREATED="1482965132148" MODIFIED="1485814132690" HGAP="34" VSHIFT="164">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<font SIZE="20"/>
-<node TEXT="load jf_mapgen" ID="ID_1607208514" CREATED="1485337522136" MODIFIED="1485337651767">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-<node TEXT="load jf_entities" ID="ID_1767926556" CREATED="1482990694521" MODIFIED="1485341352534">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-<node TEXT="load structures" ID="ID_607781869" CREATED="1482990684425" MODIFIED="1482990694266">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-<node TEXT="load towns" ID="ID_570790632" CREATED="1482990697473" MODIFIED="1482990699650">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-<node TEXT="mapgen" POSITION="right" ID="ID_215918480" CREATED="1485340615569" MODIFIED="1485814132691" HGAP="-6" VSHIFT="53">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<font SIZE="20"/>
-<node TEXT="terrain" ID="ID_246008591" CREATED="1485340623381" MODIFIED="1485340649384">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-<node TEXT="weather" ID="ID_1073166237" CREATED="1485342035646" MODIFIED="1485342038062">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-<node TEXT="erosion" ID="ID_1355196553" CREATED="1485342051461" MODIFIED="1485342052294">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-<node TEXT="biomes" ID="ID_496917037" CREATED="1485340650479" MODIFIED="1485340651960">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-<node TEXT="plants" ID="ID_1352751291" CREATED="1485342023694" MODIFIED="1485342024782">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-<node TEXT="water" ID="ID_791059618" CREATED="1485340661911" MODIFIED="1485340664143">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 </node>
 </node>
 </node>

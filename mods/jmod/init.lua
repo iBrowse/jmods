@@ -1,33 +1,29 @@
+--[[ 	JMOD 
+
+	RTS and RPG subgames with different modes available
+	
+	Also has tools for world and server management
+														]]--
+minetest.log("JMOD 0.0.1")
+
 jmod = {}
-jmod.worldpath = minetest.get_worldpath()
 jmod.modpath = minetest.get_modpath("jmod")
-
-jmod.mods = assert(io.input(jmod.worldpath.."modconfig.txt"),"failed to load modconfig")
-
-for mod, pairs in pairs(loadstring(io.read("*a"))) do
-	assert(dofile(jmod.modpath..mod),"failed to load mod "..mod))
-end
+jmod.worldpath = minetest.get_worldpath()
 
 jmod.world = {}
 jmod.players = {}
 jmod.timers = {}
 
+-- retrieve mod load list from repo.jf
 
-
-
-
---[[ JMOD contains tools to assist world creation and management ]]
-
-
-
---check for mod parts and load
-
-dofile(jmod.modpath.."/arcgis.lua")
-
---dofile(jmod.modpath.."/buildings.lua")
---dofile(jmod.modpath.."/patrons.lua")
-dofile(jmod.modpath.."/player.lua")
+minetest.log("Loading...")
 
 dofile(jmod.modpath.."/functions.lua")
+dofile(jmod.modpath.."/nodes.lua")
+dofile(jmod.modpath.."/gui/init.lua")
+dofile(jmod.modpath.."/mapgen.lua")
 
-dofile(jmod.modpath.."/commands.lua")
+
+
+
+
