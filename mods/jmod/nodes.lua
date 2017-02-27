@@ -1,18 +1,19 @@
 jmod.nodes = {}
 
+m.register_alias("mapgen_stone", "jmod:stone")
+m.register_alias("mapgen_water_source", "jmod:water")
+m.register_alias("mapgen_river_water_source", "jmod:water")
 
-
---Stone
+--DEFAULTS
 core.register_node("jmod:stone", {
 	description = "whatta basic stone yo",
 	tiles = {"jmod_stone.png"},
 	groups = {cracky = 3, stone = 1},
-	drop = "default:stone",
+	drop = "jmod:stone",
 	sounds = jmod.node_sounds_stone(),
 	}
 )
 
---Wood
 core.register_node("jmod:wood", {
 	drawtype          = "normal",
 	visual_scale	  = 1,
@@ -23,7 +24,6 @@ core.register_node("jmod:wood", {
 	sounds 			  = jmod.node_sounds_wood(),
 })
 
---Dirt
 core.register_node("jmod:dirt", {
 	drawtype          = "normal",
 	visual_scale      = 1,
@@ -32,9 +32,19 @@ core.register_node("jmod:dirt", {
 	groups            = {},
 	drop              = "jmod:dirt",
 	sounds            = jmod.node_sounds_dirt(),
-	}
-)
+})
 
+core.register_node("jmod:copper",{
+	drawtype = "normal",
+	tiles = {"jmod_copper.png"},
+	drop = "jmod:copper"
+})
+
+core.register_node("jmod:ticker_block", {
+	drawtype = "normal",
+	tiles = {"jmod_ticker.png"},
+
+})
 
 
 

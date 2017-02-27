@@ -2,9 +2,9 @@ arcGIS = {}
 arcGIS.map = {}
 local map = arcGIS.map
 
-dofile(jmod.modpath.."/functions.lua")
-dofile(jmod.modpath.."/arcgis.lua")
-dofile(jmod.modpath.."/commands.lua")
+dofile(jmod.modpath.."/arcgis/functions.lua")
+dofile(jmod.modpath.."/arcgis/arcgis.lua")
+dofile(jmod.modpath.."/arcgis/commands.lua")
 
 map.data = {}
 local data = arcGIS.map.data

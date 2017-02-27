@@ -1,6 +1,6 @@
 <map version="freeplane 1.3.0">
 <!--To view this file, download free mind mapping software Freeplane from http://freeplane.sourceforge.net -->
-<node TEXT="Minetest" ID="ID_1723255651" CREATED="1283093380553" MODIFIED="1487227893734"><hook NAME="MapStyle" zoom="0.75">
+<node TEXT="Minetest" ID="ID_1723255651" CREATED="1283093380553" MODIFIED="1487227893734"><hook NAME="MapStyle" zoom="0.564">
     <properties show_icon_for_attributes="true" show_note_icons="true"/>
 
 <map_styles>
@@ -681,7 +681,7 @@
 <node TEXT="Jmod for core, Chapter for game, Visualis for RL utility" POSITION="right" ID="ID_1399536191" CREATED="1486030733931" MODIFIED="1487227893733" HGAP="153" VSHIFT="-68">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 </node>
-<node TEXT="jmod" POSITION="right" ID="ID_186835296" CREATED="1485678510169" MODIFIED="1487824078930" HGAP="203" VSHIFT="58">
+<node TEXT="jmod" POSITION="right" ID="ID_186835296" CREATED="1485678510169" MODIFIED="1487973011877" HGAP="203" VSHIFT="58">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <font SIZE="20" BOLD="true"/>
 <node TEXT="player in uni mode" ID="ID_1663260741" CREATED="1487824068097" MODIFIED="1487841743835" HGAP="473" VSHIFT="13">
@@ -700,7 +700,7 @@
 </node>
 </node>
 </node>
-<node TEXT="jmodcore" ID="ID_357039725" CREATED="1485380840641" MODIFIED="1486110492652" HGAP="44" VSHIFT="537" BACKGROUND_COLOR="#ccffff">
+<node TEXT="jmodcore" ID="ID_357039725" CREATED="1485380840641" MODIFIED="1487972827484" HGAP="44" VSHIFT="537" BACKGROUND_COLOR="#ccffff">
 <font SIZE="16" BOLD="true" ITALIC="false"/>
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <edge STYLE="horizontal"/>
@@ -745,7 +745,7 @@
   </body>
 </html>
 </richcontent>
-<node TEXT="jmod" ID="ID_1255272377" CREATED="1485653121020" MODIFIED="1486110346001" HGAP="323" VSHIFT="-284">
+<node TEXT="jmod" ID="ID_1255272377" CREATED="1485653121020" MODIFIED="1487964812587" HGAP="253" VSHIFT="-169">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <cloud COLOR="#ccffff" SHAPE="ROUND_RECT"/>
 <edge STYLE="bezier"/>
@@ -14870,474 +14870,95 @@
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 </node>
 </node>
-<node TEXT="init" ID="ID_282222043" CREATED="1485938335089" MODIFIED="1486110492651" HGAP="12" VSHIFT="-19">
+<node TEXT="functions.lua" ID="ID_326570133" CREATED="1487964854452" MODIFIED="1487972827483" HGAP="844" VSHIFT="-52">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<node TEXT="jmod = {}" ID="ID_1505448358" CREATED="1485745213925" MODIFIED="1485999839011" HGAP="21" VSHIFT="220">
+<cloud COLOR="#ffffff" SHAPE="RECT"/>
+<hook NAME="FreeNode"/>
+<node TEXT="function jmod.node_sound_defaults(table)" ID="ID_1687984076" CREATED="1487965041638" MODIFIED="1487965728140" VSHIFT="61">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="function jmod.node_sounds_stone(table)" ID="ID_201781708" CREATED="1487965056807" MODIFIED="1487965354514">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="function jmod.node_sounds_wood(table)" ID="ID_908872618" CREATED="1487965326557" MODIFIED="1487965350003">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="function jmod.node_sounds_dirt(table)" ID="ID_965627485" CREATED="1487965355896" MODIFIED="1487965375654">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="function jmod.create_world(def)" ID="ID_81909018" CREATED="1487965067757" MODIFIED="1487965519988" VSHIFT="10">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="jmod.world.name = def.name or &quot;new world&quot;" ID="ID_276562924" CREATED="1487965427087" MODIFIED="1487965519987" VSHIFT="30">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="jmod.world.size = def.size or &quot;standard&quot;" ID="ID_942974706" CREATED="1487965450695" MODIFIED="1487965501551">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="jmod.tribute = def.tribute or 0" ID="ID_1468811207" CREATED="1487965502110" MODIFIED="1487965517917">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+<node TEXT="function jmod.load_block(bpos)" ID="ID_1669215554" CREATED="1487965591672" MODIFIED="1487965722504" VSHIFT="11">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="core.emerge_area(bpos.x, bpos.y, bpos.z)" ID="ID_734205199" CREATED="1487965614960" MODIFIED="1487965722502" VSHIFT="11">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+</node>
+<node TEXT="init.lua" ID="ID_282222043" CREATED="1485938335089" MODIFIED="1487972696060" HGAP="379" VSHIFT="18">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<cloud COLOR="#ffffff" SHAPE="RECT"/>
+<hook NAME="FreeNode"/>
+<edge STYLE="horizontal"/>
+<node TEXT="jmod = {}" ID="ID_1505448358" CREATED="1485745213925" MODIFIED="1487965212458" HGAP="21" VSHIFT="220">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <edge STYLE="horizontal"/>
 </node>
-<node TEXT="jmod.worldpath = core.get_worldpath" ID="ID_6966126" CREATED="1485745542309" MODIFIED="1485998920668" VSHIFT="21">
+<node TEXT="jmod.worldpath = core.get_worldpath" ID="ID_6966126" CREATED="1485745542309" MODIFIED="1487920133067">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <edge STYLE="horizontal"/>
 <hook NAME="FirstGroupNode"/>
-<node TEXT="" ID="ID_692326469" CREATED="1485902650743" MODIFIED="1485914456074" VSHIFT="21">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="linear"/>
 </node>
-</node>
-<node TEXT="" ID="ID_765247447" CREATED="1485902653732" MODIFIED="1485914514013">
-<hook NAME="SummaryNode"/>
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="horizontal"/>
-</node>
-<node TEXT="jmod.worldpath = core.get_modpath" ID="ID_1571131539" CREATED="1485745550009" MODIFIED="1485914514014" VSHIFT="21">
+<node TEXT="jmod.worldpath = core.get_modpath(&quot;jmod&quot;)" ID="ID_1571131539" CREATED="1485745550009" MODIFIED="1487920102918" VSHIFT="-4">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <edge STYLE="horizontal"/>
 <hook NAME="FirstGroupNode"/>
-<node TEXT="&quot;jmod&quot;" ID="ID_236711953" CREATED="1485902661475" MODIFIED="1485914456073" VSHIFT="21">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="linear"/>
 </node>
-</node>
-<node TEXT="" ID="ID_300748954" CREATED="1485902667652" MODIFIED="1485914514014">
-<hook NAME="SummaryNode"/>
+<node TEXT="jmod.world = {}" ID="ID_733156946" CREATED="1485736838959" MODIFIED="1487920179899" VSHIFT="17">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <edge STYLE="horizontal"/>
 </node>
-<node TEXT="jmod.mods = assert" ID="ID_1286124925" CREATED="1485745672859" MODIFIED="1485914628769" VSHIFT="21">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="horizontal"/>
-<hook NAME="FirstGroupNode"/>
-<node TEXT="io.input" ID="ID_1808608252" CREATED="1485902757183" MODIFIED="1485914631925" VSHIFT="40">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<hook NAME="FirstGroupNode"/>
-<edge STYLE="linear"/>
-<node TEXT="jmod.worldpath..&quot;modconfig.txt&quot;" ID="ID_1027771691" CREATED="1485902703378" MODIFIED="1485914631925" VSHIFT="18">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="linear"/>
-</node>
-</node>
-<node TEXT="&quot;failed loading modlist&quot;" ID="ID_753542007" CREATED="1485902813372" MODIFIED="1485914628769" VSHIFT="-2">
-<hook NAME="SummaryNode"/>
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-<node TEXT="" ID="ID_244603482" CREATED="1485902714457" MODIFIED="1485914514015">
-<hook NAME="SummaryNode"/>
+<node TEXT="jmod.players = {}" ID="ID_1435016070" CREATED="1485745272175" MODIFIED="1487920171066">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <edge STYLE="horizontal"/>
 </node>
-<node TEXT="for" ID="ID_299989055" CREATED="1485903021943" MODIFIED="1485999844094" VSHIFT="16">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="horizontal"/>
-<node TEXT="_" ID="ID_1343892382" CREATED="1485903035546" MODIFIED="1485914404638" VSHIFT="21">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="linear"/>
-</node>
-<node TEXT="mod" ID="ID_545149303" CREATED="1485914763015" MODIFIED="1485914772904">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="linear"/>
-</node>
-</node>
-<node TEXT="in pairs" ID="ID_1124831892" CREATED="1485910729934" MODIFIED="1485914788534">
-<hook NAME="SummaryNode"/>
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<hook NAME="FirstGroupNode"/>
-<edge STYLE="linear"/>
-<node TEXT="loadstring" ID="ID_490476921" CREATED="1485903061602" MODIFIED="1485914794505" HGAP="5" VSHIFT="19">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<node TEXT="io.read" ID="ID_414544597" CREATED="1485903091015" MODIFIED="1485914798973" HGAP="9" VSHIFT="17">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<hook NAME="FirstGroupNode"/>
-<node TEXT="&quot;*a&quot;" ID="ID_222321702" CREATED="1485903101319" MODIFIED="1485914798971" HGAP="8" VSHIFT="11">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-<node TEXT="" ID="ID_1216229625" CREATED="1485903097375" MODIFIED="1485903097376">
-<hook NAME="SummaryNode"/>
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-<node TEXT="" ID="ID_45063906" CREATED="1485910787420" MODIFIED="1485910787420">
-<hook NAME="SummaryNode"/>
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-<node TEXT="do" ID="ID_172878774" CREATED="1485910790204" MODIFIED="1485984928887" HGAP="19" VSHIFT="-13">
-<hook NAME="SummaryNode"/>
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<hook NAME="FirstGroupNode"/>
-<edge STYLE="linear"/>
-<node TEXT="assert" ID="ID_1356486882" CREATED="1485903163308" MODIFIED="1485984928886" HGAP="18" VSHIFT="20">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<node TEXT="dofile" ID="ID_979422294" CREATED="1485903171820" MODIFIED="1485914818097" HGAP="22" VSHIFT="19">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<hook NAME="FirstGroupNode"/>
-<node TEXT="jmod.modpath" ID="ID_1215713122" CREATED="1485903178851" MODIFIED="1485914826446" HGAP="21" VSHIFT="10">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<node TEXT="..mod.name" ID="ID_484134032" CREATED="1485903315261" MODIFIED="1485914826444">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-</node>
-<node TEXT="&quot;failed to load &quot;" ID="ID_1992324636" CREATED="1485903175619" MODIFIED="1485911154705" HGAP="25" VSHIFT="-7">
-<hook NAME="SummaryNode"/>
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<node TEXT="..mod.name" ID="ID_277721800" CREATED="1485903375178" MODIFIED="1485914426286">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-</node>
-<node TEXT="" ID="ID_793588728" CREATED="1485910815315" MODIFIED="1485911161860" VSHIFT="-20">
-<hook NAME="SummaryNode"/>
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-<node TEXT="" ID="ID_1930418653" CREATED="1485910825114" MODIFIED="1485914514018" VSHIFT="-22">
-<hook NAME="SummaryNode"/>
+<node TEXT="jmod.timers = {}" ID="ID_372477816" CREATED="1485745283230" MODIFIED="1487920173001">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <edge STYLE="horizontal"/>
 </node>
-<node TEXT="jmod.world =" ID="ID_733156946" CREATED="1485736838959" MODIFIED="1485934557519" VSHIFT="27">
+<node TEXT="core.print(&quot;Loading...&quot;)" ID="ID_1629792953" CREATED="1487965172565" MODIFIED="1487965189550" VSHIFT="10">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="horizontal"/>
-<node TEXT="{}" ID="ID_735601210" CREATED="1485934544339" MODIFIED="1485934572627" VSHIFT="17">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="linear"/>
-</node>
-</node>
-<node TEXT="jmod.players =" ID="ID_1435016070" CREATED="1485745272175" MODIFIED="1485934569476">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="horizontal"/>
-<node TEXT="{}" ID="ID_31278668" CREATED="1485934562786" MODIFIED="1485934575834" VSHIFT="11">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="linear"/>
-</node>
-</node>
-<node TEXT="jmod.timers =" ID="ID_372477816" CREATED="1485745283230" MODIFIED="1485934568023">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="horizontal"/>
-<node TEXT="{}" ID="ID_680385886" CREATED="1485934560626" MODIFIED="1485934572628" VSHIFT="11">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="linear"/>
-</node>
-</node>
-<node TEXT="assert" ID="ID_1342014603" CREATED="1485902876110" MODIFIED="1485984959491" VSHIFT="21">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="horizontal"/>
-<hook NAME="FirstGroupNode"/>
-<node TEXT="dofile" ID="ID_1803925833" CREATED="1485902902984" MODIFIED="1485984951110" VSHIFT="29">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<hook NAME="FirstGroupNode"/>
-<edge STYLE="linear"/>
-<node TEXT="dofilejmod.modpath..&quot;/reknown.lua&quot;" ID="ID_83708786" CREATED="1485902891465" MODIFIED="1485984949275" VSHIFT="27">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-<node TEXT="&quot;Reknown modfile not found!&quot;" ID="ID_1952201289" CREATED="1485902921735" MODIFIED="1485984959490" HGAP="31" VSHIFT="-23">
-<hook NAME="SummaryNode"/>
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-<node TEXT="" ID="ID_614155963" CREATED="1485902897273" MODIFIED="1485984961684" VSHIFT="1">
-<hook NAME="SummaryNode"/>
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="horizontal"/>
-</node>
-<node TEXT="minetest.register_chatcommand" ID="ID_1563098056" CREATED="1485663809589" MODIFIED="1485933321167" VSHIFT="27">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="horizontal"/>
-<hook NAME="FirstGroupNode"/>
-<node TEXT="" ID="ID_157113334" CREATED="1485933303958" MODIFIED="1485933422823" VSHIFT="7">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="linear"/>
-</node>
-</node>
-<node TEXT="" ID="ID_781735600" CREATED="1485933306758" MODIFIED="1485933306759">
-<hook NAME="SummaryNode"/>
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-<node TEXT="minetest.register_on_joinplayer" ID="ID_183585276" CREATED="1485635655692" MODIFIED="1485933380565" HGAP="22" VSHIFT="14">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="horizontal"/>
-<hook NAME="FirstGroupNode"/>
-<node TEXT="player" ID="ID_81869625" CREATED="1485933345292" MODIFIED="1485933419120" VSHIFT="15">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="linear"/>
-</node>
-</node>
-<node TEXT="" ID="ID_1737855644" CREATED="1485933363123" MODIFIED="1485934494344" VSHIFT="-1">
-<hook NAME="SummaryNode"/>
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<node TEXT="local name = minetest.get_player_name" ID="ID_125869046" CREATED="1485648110599" MODIFIED="1485934518193" VSHIFT="49">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="linear"/>
-<hook NAME="FirstGroupNode"/>
-<node TEXT="player" ID="ID_290631276" CREATED="1485934519977" MODIFIED="1485934521912">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-<node TEXT="" ID="ID_54085229" CREATED="1485933403641" MODIFIED="1485933403641">
-<hook NAME="SummaryNode"/>
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-<node TEXT="local data = jmod.players[name]" ID="ID_1131984847" CREATED="1485665880131" MODIFIED="1485914523290">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="linear"/>
-</node>
-<node TEXT="if not data.mode then" ID="ID_1705953572" CREATED="1485648078216" MODIFIED="1485933396253">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="linear"/>
-<node TEXT="data.mode = &quot;&quot;" ID="ID_491013478" CREATED="1485665381054" MODIFIED="1485933396253" VSHIFT="21">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<hook NAME="FirstGroupNode"/>
-</node>
-<node TEXT="//TODO determine what mode a player should be" ID="ID_355895781" CREATED="1485665468002" MODIFIED="1485665483070">
-<hook NAME="SummaryNode"/>
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-</node>
-<node TEXT="minetest.register_globalstep()" ID="ID_462342268" CREATED="1485635670160" MODIFIED="1485933619716" VSHIFT="14">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="horizontal"/>
-<node TEXT="for" ID="ID_858746760" CREATED="1485933473022" MODIFIED="1485933578219" VSHIFT="80">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<hook NAME="FirstGroupNode"/>
-<edge STYLE="linear"/>
-<node TEXT="name" ID="ID_1369166767" CREATED="1485933476431" MODIFIED="1485933551393" VSHIFT="19">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="linear"/>
-</node>
-<node TEXT="data" ID="ID_1119591870" CREATED="1485933480598" MODIFIED="1485933551393">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="linear"/>
-</node>
-</node>
-<node TEXT="in" ID="ID_1543727249" CREATED="1485933493205" MODIFIED="1485933567014" VSHIFT="-15">
-<hook NAME="SummaryNode"/>
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="linear"/>
-<node TEXT="pairs" ID="ID_173028145" CREATED="1485933517875" MODIFIED="1485933571998" VSHIFT="1">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<node TEXT="jmod.players" ID="ID_1423443136" CREATED="1485933447671" MODIFIED="1485933571997" VSHIFT="11">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-</node>
-<node TEXT="do" ID="ID_1046443174" CREATED="1485933458670" MODIFIED="1485933637303" VSHIFT="-7">
-<hook NAME="SummaryNode"/>
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="linear"/>
-<node TEXT="if data.arcgis then" ID="ID_1988007615" CREATED="1485666162769" MODIFIED="1485933934769" VSHIFT="22">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<node TEXT="local quad =" ID="ID_838423294" CREATED="1485933712594" MODIFIED="1485933893305" VSHIFT="30">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<node TEXT="arcGIS.pos_to_quad" ID="ID_1419954307" CREATED="1485933720619" MODIFIED="1485933827463" VSHIFT="20">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<node TEXT="getpos" ID="ID_286944078" CREATED="1485933747817" MODIFIED="1485933829553" VSHIFT="10">
-<hook NAME="SummaryNode"/>
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<node TEXT="get_player_by_name" ID="ID_1075572677" CREATED="1485933730860" MODIFIED="1485933875678" VSHIFT="22">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<node TEXT="name" ID="ID_299182923" CREATED="1485933871806" MODIFIED="1485933875678" VSHIFT="14">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-</node>
-</node>
-<node TEXT="" ID="ID_761965046" CREATED="1485933827462" MODIFIED="1485933827462">
-<hook NAME="SummaryNode"/>
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-<node TEXT="if not" ID="ID_100724331" CREATED="1485933897762" MODIFIED="1485933931385">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<hook NAME="FirstGroupNode"/>
-<node TEXT="data.quad" ID="ID_247802163" CREATED="1485933899828" MODIFIED="1485933931385" VSHIFT="15">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-<node TEXT="then" ID="ID_975433449" CREATED="1485933908770" MODIFIED="1485933937464" VSHIFT="-7">
-<hook NAME="SummaryNode"/>
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<node TEXT="data.quad =" ID="ID_1624955249" CREATED="1485933912514" MODIFIED="1485933940504" VSHIFT="14">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<node TEXT="quad" ID="ID_1375892223" CREATED="1485933920163" MODIFIED="1485933940503" VSHIFT="7">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-</node>
-</node>
-<node TEXT="if jmod.players[name].mode == &quot;demi&quot; then" ID="ID_41423063" CREATED="1485665649787" MODIFIED="1485665827827" VSHIFT="21">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<node TEXT="" ID="ID_313069763" CREATED="1485665814935" MODIFIED="1485665827826" VSHIFT="21">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-</node>
-<node TEXT="sec_timer = sec_timer + dtime" ID="ID_706151008" CREATED="1485647882785" MODIFIED="1485914519923" VSHIFT="-26">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="linear"/>
-</node>
-<node TEXT="if sec_timer &gt;= 1 then" ID="ID_43109815" CREATED="1485647961477" MODIFIED="1485934102828">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="linear"/>
-<node TEXT="things to check each second" ID="ID_1865430246" CREATED="1485648016767" MODIFIED="1485934096641" VSHIFT="53">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-<node TEXT="for" ID="ID_421094656" CREATED="1485934040603" MODIFIED="1485934099777" VSHIFT="13">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<hook NAME="FirstGroupNode"/>
-<node TEXT="name" ID="ID_1089041824" CREATED="1485934042372" MODIFIED="1485934091571" VSHIFT="26">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-<node TEXT="data" ID="ID_198858673" CREATED="1485934044399" MODIFIED="1485934046055">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-<node TEXT="in" ID="ID_215775911" CREATED="1485934047283" MODIFIED="1486012521868" VSHIFT="-22">
-<hook NAME="SummaryNode"/>
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<node TEXT="pairs" ID="ID_779578064" CREATED="1485934050532" MODIFIED="1485934135081" VSHIFT="13">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<hook NAME="FirstGroupNode"/>
-<node TEXT="jmod.players" ID="ID_684466284" CREATED="1485934078587" MODIFIED="1485934135081" VSHIFT="12">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-<node TEXT="do" ID="ID_1539233620" CREATED="1485934086841" MODIFIED="1486012521868" HGAP="21" VSHIFT="-9">
-<hook NAME="SummaryNode"/>
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<node TEXT="local player =" ID="ID_1434599111" CREATED="1485934148086" MODIFIED="1485934435372" VSHIFT="87">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<node TEXT="minetest.get_player_by_name" ID="ID_1362162607" CREATED="1485934152791" MODIFIED="1485934287141" VSHIFT="13">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<hook NAME="FirstGroupNode"/>
-<node TEXT="name" ID="ID_415201514" CREATED="1485934197694" MODIFIED="1485934235285" VSHIFT="12">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-<node TEXT="" ID="ID_1282477545" CREATED="1485934200740" MODIFIED="1485934200740">
-<hook NAME="SummaryNode"/>
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-<node TEXT="if not" ID="ID_1640967839" CREATED="1485934240174" MODIFIED="1485934292092">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<hook NAME="FirstGroupNode"/>
-<node TEXT="data.mode" ID="ID_1901166011" CREATED="1485934246876" MODIFIED="1485934274504" VSHIFT="13">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-<node TEXT="then" ID="ID_677560910" CREATED="1485934250761" MODIFIED="1485934279692">
-<hook NAME="SummaryNode"/>
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<node TEXT="data.mode =" ID="ID_1958892631" CREATED="1485934258073" MODIFIED="1485934289775" VSHIFT="13">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<node TEXT="DEFAULT_MODE" ID="ID_839620072" CREATED="1485934265529" MODIFIED="1485934289774">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-</node>
-<node TEXT="if" ID="ID_323696252" CREATED="1485934308539" MODIFIED="1485934359003" VSHIFT="13">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<hook NAME="FirstGroupNode"/>
-<node TEXT="data.mode.arcgis" ID="ID_564328587" CREATED="1485934310265" MODIFIED="1485934350527" VSHIFT="13">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-<node TEXT="then" ID="ID_825260049" CREATED="1485934319910" MODIFIED="1485934366739" VSHIFT="-8">
-<hook NAME="SummaryNode"/>
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<node TEXT="if not" ID="ID_601949395" CREATED="1485934322072" MODIFIED="1485934364986" VSHIFT="40">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<hook NAME="FirstGroupNode"/>
-<node TEXT="data.quad" ID="ID_164998204" CREATED="1485934326704" MODIFIED="1485934361156" VSHIFT="13">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-<node TEXT="then" ID="ID_1951068907" CREATED="1485934332341" MODIFIED="1485934366739">
-<hook NAME="SummaryNode"/>
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-<node TEXT="if not" ID="ID_852586853" CREATED="1485934337441" MODIFIED="1485934363029">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<hook NAME="FirstGroupNode"/>
-<node TEXT="data.points" ID="ID_1253403023" CREATED="1485934341909" MODIFIED="1485934363028" VSHIFT="13">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-<node TEXT="then" ID="ID_763000413" CREATED="1485934346388" MODIFIED="1485934347601">
-<hook NAME="SummaryNode"/>
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-<node TEXT="if" ID="ID_811070561" CREATED="1485934392903" MODIFIED="1485934433497" VSHIFT="-12">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<hook NAME="FirstGroupNode"/>
-<node TEXT="data.mode.demi" ID="ID_1820786662" CREATED="1485934394221" MODIFIED="1485934428197" VSHIFT="13">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-<node TEXT="then" ID="ID_81643863" CREATED="1485934400082" MODIFIED="1485934429743">
-<hook NAME="SummaryNode"/>
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<node TEXT="jmod.make_demi" ID="ID_238234359" CREATED="1485934402764" MODIFIED="1485934438899" VSHIFT="26">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<hook NAME="FirstGroupNode"/>
-<node TEXT="player" ID="ID_123725410" CREATED="1485934418979" MODIFIED="1485934438899" VSHIFT="25">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 </node>
-</node>
-<node TEXT="" ID="ID_1749833991" CREATED="1485934421737" MODIFIED="1485934421737">
-<hook NAME="SummaryNode"/>
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-</node>
-</node>
-<node TEXT="sec_timer =" ID="ID_1622584680" CREATED="1485647990519" MODIFIED="1485934475111" VSHIFT="32">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<node TEXT="0" OBJECT="java.lang.Long|0" ID="ID_91361358" CREATED="1485934475114" MODIFIED="1485934476243">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-</node>
-</node>
-</node>
-<node TEXT="nodes" ID="ID_676055211" CREATED="1485944387851" MODIFIED="1485999502330">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<node TEXT="dirt" ID="ID_1333673482" CREATED="1485999325121" MODIFIED="1485999504968" VSHIFT="13">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<node TEXT="soft" ID="ID_1840251880" CREATED="1485999385437" MODIFIED="1485999504968" VSHIFT="41">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-<node TEXT="loose" ID="ID_347449808" CREATED="1485999346588" MODIFIED="1485999350797">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-<node TEXT="firm" ID="ID_1544944255" CREATED="1485999356700" MODIFIED="1485999384363">
+<node TEXT="dofile(jmod.modpath..&quot;/functions.lua&quot;)" ID="ID_162201219" CREATED="1487965149030" MODIFIED="1487965196725">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 </node>
-<node TEXT="packed" ID="ID_1925128985" CREATED="1485999357787" MODIFIED="1485999359124">
+<node TEXT="dofile(jmod.modpath..&quot;/nodes.lua&quot;)" ID="ID_639174427" CREATED="1487969687780" MODIFIED="1487969708616" VSHIFT="13">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 </node>
-</node>
-<node TEXT="rock" ID="ID_963158986" CREATED="1485999333964" MODIFIED="1485999498019">
+<node TEXT="dofile(jmod.modpath..&quot;/mapgen.lua&quot;)" ID="ID_1528057167" CREATED="1487972632143" MODIFIED="1487972650149">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<node TEXT="loose" ID="ID_1174373243" CREATED="1485999417900" MODIFIED="1485999498018" VSHIFT="26">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 </node>
-<node TEXT="hard" ID="ID_718885745" CREATED="1485999437752" MODIFIED="1485999439464">
+<node TEXT="dofile(jmod.modpath..&quot;/gui/init.lua&quot;)" ID="ID_1343875414" CREATED="1487972656084" MODIFIED="1487972681673">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 </node>
-<node TEXT="solid" ID="ID_1170184223" CREATED="1485999427736" MODIFIED="1485999431017">
+<node TEXT="dofile(jmod.modpath..&quot;/buildings/init.lua&quot;)" ID="ID_855784905" CREATED="1487972683314" MODIFIED="1487972696059" VSHIFT="16">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
 </node>
 </node>
-<node TEXT="environment" ID="ID_948601762" CREATED="1485999307806" MODIFIED="1487491746992" VSHIFT="13">
+<node TEXT="environment" ID="ID_948601762" CREATED="1485999307806" MODIFIED="1487972796034" HGAP="105" VSHIFT="428">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<cloud COLOR="#ffffff" SHAPE="RECT"/>
+<hook NAME="FreeNode"/>
 <node TEXT="grass" ID="ID_425612182" CREATED="1485999549698" MODIFIED="1485999823054" VSHIFT="51">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <node TEXT="sparse" ID="ID_1054552684" CREATED="1485999578349" MODIFIED="1485999623565" HGAP="21" VSHIFT="40">
@@ -15402,8 +15023,42 @@
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 </node>
 </node>
-<node TEXT="mapgen" ID="ID_1236946625" CREATED="1485944145811" MODIFIED="1486033845881" VSHIFT="13">
+<node TEXT="nodes" ID="ID_676055211" CREATED="1485944387851" MODIFIED="1487972773042" HGAP="789" VSHIFT="487">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<cloud COLOR="#ffffff" SHAPE="RECT"/>
+<hook NAME="FreeNode"/>
+<node TEXT="dirt" ID="ID_1333673482" CREATED="1485999325121" MODIFIED="1485999504968" VSHIFT="13">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="soft" ID="ID_1840251880" CREATED="1485999385437" MODIFIED="1485999504968" VSHIFT="41">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="loose" ID="ID_347449808" CREATED="1485999346588" MODIFIED="1485999350797">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="firm" ID="ID_1544944255" CREATED="1485999356700" MODIFIED="1485999384363">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="packed" ID="ID_1925128985" CREATED="1485999357787" MODIFIED="1485999359124">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+<node TEXT="rock" ID="ID_963158986" CREATED="1485999333964" MODIFIED="1485999498019">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<node TEXT="loose" ID="ID_1174373243" CREATED="1485999417900" MODIFIED="1485999498018" VSHIFT="26">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="hard" ID="ID_718885745" CREATED="1485999437752" MODIFIED="1485999439464">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+<node TEXT="solid" ID="ID_1170184223" CREATED="1485999427736" MODIFIED="1485999431017">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+</node>
+</node>
+</node>
+<node TEXT="mapgen" ID="ID_1236946625" CREATED="1485944145811" MODIFIED="1487972801754" HGAP="782" VSHIFT="657">
+<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
+<cloud COLOR="#ffffff" SHAPE="RECT"/>
+<hook NAME="FreeNode"/>
 <node TEXT="mountains" ID="ID_1822772384" CREATED="1486000976227" MODIFIED="1486033839163" HGAP="21" VSHIFT="147">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <node TEXT="scatter peaks using chaos formula" ID="ID_978470892" CREATED="1486003347579" MODIFIED="1486003514635" VSHIFT="45">
@@ -15476,7 +15131,7 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="visualis" ID="ID_1579441373" CREATED="1485901055960" MODIFIED="1487490518530" HGAP="47" VSHIFT="347">
+<node TEXT="visualis" ID="ID_1579441373" CREATED="1485901055960" MODIFIED="1487972983515" HGAP="51" VSHIFT="839">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <cloud COLOR="#ffcccc" SHAPE="RECT"/>
 <font SIZE="16" BOLD="true"/>
@@ -15565,35 +15220,11 @@
 </node>
 <node TEXT="register(name, shapedef)" ID="ID_848787148" CREATED="1487451949731" MODIFIED="1487452022289" VSHIFT="7">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<node TEXT="if" ID="ID_954359502" CREATED="1485933119894" MODIFIED="1487451880684" HGAP="15" VSHIFT="25">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<hook NAME="FirstGroupNode"/>
-<node TEXT=" name not in pairs" ID="ID_822123067" CREATED="1485933065786" MODIFIED="1487451882607" HGAP="8" VSHIFT="39">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="linear"/>
-<hook NAME="FirstGroupNode"/>
-<node TEXT="self" ID="ID_1377345108" CREATED="1485933157853" MODIFIED="1487451882607" HGAP="8" VSHIFT="25">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-<node TEXT="" ID="ID_1729963650" CREATED="1485933169404" MODIFIED="1485933169405">
-<hook NAME="SummaryNode"/>
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-</node>
-</node>
-<node TEXT="then" ID="ID_1643386923" CREATED="1485933140278" MODIFIED="1485933273446" HGAP="17" VSHIFT="-11">
-<hook NAME="SummaryNode"/>
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<node TEXT="self[name] = shapedef" ID="ID_88762880" CREATED="1485933042571" MODIFIED="1485933192469" VSHIFT="8">
-<attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
-<edge STYLE="linear"/>
 </node>
 </node>
 </node>
 </node>
-</node>
-</node>
-<node TEXT="combat" ID="ID_1922796009" CREATED="1485938839996" MODIFIED="1487489400027" HGAP="41" VSHIFT="134">
+<node TEXT="combat" ID="ID_1922796009" CREATED="1485938839996" MODIFIED="1487973011877" HGAP="41" VSHIFT="19">
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <font SIZE="16" BOLD="true"/>
 <cloud COLOR="#f0f0f0" SHAPE="RECT"/>
