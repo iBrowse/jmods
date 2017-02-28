@@ -1,6 +1,6 @@
 <map version="freeplane 1.3.0">
 <!--To view this file, download free mind mapping software Freeplane from http://freeplane.sourceforge.net -->
-<node TEXT="Minetest" ID="ID_1723255651" CREATED="1283093380553" MODIFIED="1487227893734"><hook NAME="MapStyle" zoom="0.564">
+<node TEXT="Minetest" ID="ID_1723255651" CREATED="1283093380553" MODIFIED="1487227893734"><hook NAME="MapStyle" zoom="0.62">
     <properties show_icon_for_attributes="true" show_note_icons="true"/>
 
 <map_styles>
@@ -700,7 +700,7 @@
 </node>
 </node>
 </node>
-<node TEXT="jmodcore" ID="ID_357039725" CREATED="1485380840641" MODIFIED="1487972827484" HGAP="44" VSHIFT="537" BACKGROUND_COLOR="#ccffff">
+<node TEXT="jmod" ID="ID_357039725" CREATED="1485380840641" MODIFIED="1488142469322" HGAP="44" VSHIFT="537" BACKGROUND_COLOR="#ccffff">
 <font SIZE="16" BOLD="true" ITALIC="false"/>
 <attribute_layout NAME_WIDTH="20" VALUE_WIDTH="80"/>
 <edge STYLE="horizontal"/>

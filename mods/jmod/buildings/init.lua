@@ -1,32 +1,25 @@
 --[[ BUILDINGS
-Buildings generate units and perform various functions
+Generate units and get things done!
 ]]
 
 buildings = {}
 buildings.types = {}
 
---Objects
+--Buildings 
+-- have entrance (can be entered),
+-- name and pos/dir for map, 
+-- id gets assigned when the Building registers to a World
 Building = {
---def = {}
-	id = 0,
+	pub = "",
+	sub = {}
 	name = "",
 	pos = {x=0,y=0,z=0},
+	address = 
 	dir = 0,
-	comp = {--[[
-		rooms = {
-			1 = {def},
-			2 = {def},
-		},
-		doors = {
-			1 = {def},
-			2 = {def},
-			3 = {def},
-		}, ]]
-
-	},
+	def = {}
 }
 
-function Building:new(def)
+function Building:new()
 	def = def or {}
 	setmetatable(def, self)
 	self.__index = self
@@ -40,7 +33,6 @@ Room = {
 
 Wall = {}
 
---called when a player places a building
 function buildings.add(name, pos, def)
 	if not buildings.types[def.type] then
 		Building:new(def)

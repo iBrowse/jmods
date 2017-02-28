@@ -38,16 +38,16 @@ map.spawn = {
 	},
 }
 
+
+--TODO clean this up and make arcGIS a thing rly
 local world_timer = 0
 minetest.register_globalstep(
 function(dtime)
 	world_timer = world_timer+dtime
 	if world_timer >= 6 then --every 6 seconds
-		minetest.chat_send_all(core.serialize(jmod.players))
-		local players = jmod.players
-		minetest.chat_send_all(core.serialize(players))
-		for name, data in pairs(players) do
-			local player = minetest.get_player_by_name(name)
+		local players = m.get_connected_players()
+		for _, player in pairs(players) do
+			local name = player:get_player_name()
 			local loc = player:getpos()
 			minetest.chat_send_all(name.." is connected at ["..loc.x..", "..loc.z.."]")
 		end
