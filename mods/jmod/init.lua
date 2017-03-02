@@ -1,49 +1,59 @@
 --[[ 	JMOD 
-RTS and RPG subgames with different modes available.
-Also has tools for world and server management.
-														]]--
-m = minetest
-m.log("Starting JMOD 0.0.1")
+RTS/RPG with subgames; different modes available;
+Also tools for world and server management.
+													]]--
+minetest.log("Starting JMOD 0.0.1")
 
 jmod = {}
-jmod.modpath = m.get_modpath("jmod")
-m.log("modpath is "..jmod.modpath)
-jmod.worldpath = m.get_worldpath()
-m.log("worldpath is "..jmod.worldpath)
+jmod.modpath = minetest.get_modpath("jmod")
+minetest.log("modpath is "..jmod.modpath)
+jmod.worldpath = minetest.get_worldpath()
+minetest.log("worldpath is "..jmod.worldpath)
+
 
 --
--- CORE MODULES
-m.log("...LOADING MODULES")
+-- MODULES
+minetest.log("...LOADING MODULES")
 dofile(jmod.modpath.."/functions.lua")
+dofile(jmod.modpath.."/world.lua")
 dofile(jmod.modpath.."/nodes.lua")
 dofile(jmod.modpath.."/mapgen.lua")
-dofile(jmod.modpath.."/world.lua")
 dofile(jmod.modpath.."/gui.lua")
+dofile(jmod.modpath.."/sounds.lua")
+--dofile(jmod.modpath.."/player.lua")
 dofile(jmod.modpath.."/resources.lua")
 
---
--- FEATURE MODULES
 --dofile(jmod.modpath.."/arcgis/init.lua")
 dofile(jmod.modpath.."/buildings/init.lua")
 dofile(jmod.modpath.."/combat/init.lua")
+minetest.log("...MODULES LOADED\n")
 
 --
 -- WORLD SETUP
-m.log("...MODULES LOADED\n")
-m.log("...Initializing World")
+minetest.log("...Initializing Worlds")
 
-jmod.world = {}
-jmod.world = jmod.load_world() or World:new() or {}
+jmod.worlds = {--[[
+	1 = {
+		name = "Numeria",
+		verts = {
+			1={v={2,3,4,5,6},f={1,2,3,4,5}},
+			2={...},
+		},
+		faces = {
+			1={v={1,2,3},f={2,5,6}},
+			2={...},
+		},
+		maps = {
+			1={1{},2{},3{},4{},5{},6{},7{},8{}} --and so on..
+		},
+	},
+	2 = {...},
+--]]}
 
-jmod.world.players = {}
-players = jmod.world.players
+jmod.slots = {}
+jmod.players = {}
 
 
---list of all maps currently loaded on the server/World
-jmod.world.maps = {}
+jmod.worlds = jmod.load_world()
 
-
-
-
-
-
+--jmod.run()

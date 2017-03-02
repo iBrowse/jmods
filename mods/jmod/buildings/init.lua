@@ -1,25 +1,27 @@
 --[[ BUILDINGS
-Generate units and get things done!
-]]
+Store resources!
+Generate units
+Get things done!
+--]]
 
 buildings = {}
 buildings.types = {}
 
 --Buildings 
--- have entrance (can be entered),
--- name and pos/dir for map, 
+-- have at least one entrance
+-- name and pos/dir for map
 -- id gets assigned when the Building registers to a World
 Building = {
 	pub = "",
-	sub = {}
+	sub = {},
 	name = "",
 	pos = {x=0,y=0,z=0},
-	address = 
+	address = "", --"Lobby[1.5534]"
 	dir = 0,
-	def = {}
+	obj = {},
 }
 
-function Building:new()
+function Building:new(def)
 	def = def or {}
 	setmetatable(def, self)
 	self.__index = self
@@ -28,7 +30,6 @@ end
 
 Room = {
 	pos = {x=0,y=0,z=0},
-	
 }
 
 Wall = {}

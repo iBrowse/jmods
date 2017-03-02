@@ -1,20 +1,33 @@
 mapgen = {}
 
 
-
-if mapgen == nil then mapgen = jmod.new_map() end
-
-function mapgen.new()	
+--returns the finished Map object for use in root world node
+--params: size, height, 
+function mapgen.new(def)
+	local map = Map:new{}	
 	return map
 end
 
 
 
 --[[
-1024 say
-2048 my
-4096 name
-8192 bitch
+for file in project
+	for line in file
+		for object in line
+			gen_gfx(object)
+		gen_gfx(line)
+	gen_gfx(file)
+gen_gfx(project)
+
+for change in stream
+	apply(change)
+
+
+
+1024
+2048
+4096
+8192
 16384
 32768
 65536
