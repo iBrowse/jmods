@@ -4,25 +4,30 @@ function jmod.load_world()end
 -- WORLD OBJECT
 --stores maps, their objects, and the shape of world
 World = {
+	-- OBJECT
+	name = "",
+	verts = {}, -- {1={verts={2,3,4,5,6},faces={1,2,3,4,5}}, 2={verts={1,3,6,7,8},faces={1,5,6,7,8}}, ... }
+	faces = {}, -- {1={verts={1,2,3},faces={2,5,6}}, 2={verts={1,3,4},faces={1,3,8}}, ... }
+	maps = {},  -- {1={name="numeria",faces={1,2},}}
+
+	new = function() return setmetatable({},self) end
+
+	-- METAMETHODS
+
   __index = {
   	start = function()end
   },
   __newindex = function()end
 	
-	name = "",
-	verts = {}, -- {1={verts={2,3,4,5,6},faces={1,2,3,4,5}}, 2={verts={1,3,6,7,8},faces={1,5,6,7,8}}, ... }
-	faces = {}, -- {1={verts={1,2,3},faces={2,5,6}}, 2={verts={1,3,4},faces={1,3,8}}, ... }
-	maps = {},  -- {1={name="numeria",faces={1,2},}}
+	-- INTERNAL
 }
 
 --World Object init
 --returns new World ready to accept commands
--- def {name, , }
+-- def {name,verts,faces,maps,creator,tribute,seed}
 function World.new(def) --number of rhomb to use; 10 faces = d20 = 30 maps, 10 per dimension 
 	local w = {}
 	for k, v in ipairs(def) do 
-		if k == "name" then
-		end
 		w[k] = v 
 	end
 	return setmetatable(w, World)
@@ -31,26 +36,45 @@ end
 
 --adds a map to the World with default
 --or specified parameters
-local function World:map(self, worlddef)
+function World:add_map(self, mapdef)
+	for n, vert in ipairs(mapdef.verts)
 	self.maps[name] = mapdef
+end
+
+
+--removes specified map from specified world
+function World:remove_map(self,map)
+	return self:get_map(map):delete()
 end
 
 --deletes specified map from the World
 --requires admin key to delete
---the same function is called to begin
---and finish the delete process
-local function World:_map(map)
+--returns nil or err
+local function World:delete(self, map, key)
+	local err = nil
+	if not self.maps[map.name] then err = "no map found with that name or number " else
+	if not #self.maps[map.name].players == 0 then err = "all players must log off to delete the map " else
+	if map:hash(key) = map.key then self.maps[map.name] = nil 
+	return err
 end
+
 
 --begin time and calculations, opens to network, etc)
 function World:start(world)
 	
 end
 
+--TODO
+--do the opposite
 function World:stop(world)
 
 end
 
+--TODO
+--returns the face that is found by rotating $face over $edge usually this is referring to the
+-- 'other' face that an edge is a part of
+--in the case of more than 2 faces containing the edge, default is the first $face encountered
+-- while rotating $face around $edge in its positive direction. 
 local function World:get_adj_face(face, edge)
 	local A = edge.a
 	local B = edge.b
@@ -105,7 +129,6 @@ Face = {
 
 	verts = {},
 	faces = {},
-
 }
 
 local function Face.new(def)
@@ -116,12 +139,7 @@ local function Face.new(def)
 	for n,verts in ipairs(def) do
 		face.verts[n] = verts
 	end
-
-
-	
-
 end
-
 
 
 local function Polyhedron.new()
@@ -154,7 +172,7 @@ end
 
 
 Map = {mt = {},
-	name = ""
+	name = nil,
 	verts = {},
 	faces = {},
 }

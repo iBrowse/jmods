@@ -21,9 +21,9 @@ dofile(jmod.modpath.."/mapgen.lua")
 dofile(jmod.modpath.."/gui.lua")
 dofile(jmod.modpath.."/sounds.lua")
 --dofile(jmod.modpath.."/player.lua")
-dofile(jmod.modpath.."/resources.lua")
-
 --dofile(jmod.modpath.."/arcgis/init.lua")
+
+dofile(jmod.modpath.."/resources.lua")
 dofile(jmod.modpath.."/buildings/init.lua")
 dofile(jmod.modpath.."/combat/init.lua")
 minetest.log("...MODULES LOADED\n")
@@ -32,28 +32,14 @@ minetest.log("...MODULES LOADED\n")
 -- WORLD SETUP
 minetest.log("...Initializing Worlds")
 
-jmod.worlds = {--[[
-	1 = {
-		name = "Numeria",
-		verts = {
-			1={v={2,3,4,5,6},f={1,2,3,4,5}},
-			2={...},
-		},
-		faces = {
-			1={v={1,2,3},f={2,5,6}},
-			2={...},
-		},
-		maps = {
-			1={1{},2{},3{},4{},5{},6{},7{},8{}} --and so on..
-		},
-	},
-	2 = {...},
---]]}
+jmod.worlds = {}
 
 jmod.slots = {}
+
 jmod.players = {}
 
-
 jmod.worlds = jmod.load_world()
+
+
 
 --jmod.run()

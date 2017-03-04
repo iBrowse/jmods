@@ -1,13 +1,18 @@
+--------------------------------------------------------------------------------
 -- WORLD CREATION
 
 --starts a new world
 -- opens gui.new_world
 -- def {name="", shapedef={}, maps={}}
-function jmod.new_world()
-	jmod.worlds[name] = maps
+function jmod.new_world(playerIn)
+	--display new_world_gui to player
+	local fs = jmod.formspecs.new_world
+	--gui.display("new_world_gui", playerIn)
+	minetest.show_formspec(playerIn, "new_world", fs)
+
 end
 
---read world datastring from worldpath/worlds.jmod
+--read world data from worldpath/worlds.jmod
 function jmod.load_world()
 	local world = {}
 
@@ -28,7 +33,7 @@ function jmod.save_world()
 end
 
 
---
+--------------------------------------------------------------------------------
 -- MAP GENERATION
 function jmod.generate_map(world, def) -- string name, Size size, int tribute
 	jmod.world.name = def.name or "new_world"
@@ -55,3 +60,5 @@ function jmod.new_map(world, mapdef)
 		end
 	end
 end
+
+
